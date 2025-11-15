@@ -1,1 +1,68 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
 
+\title{Introduction to Modern Analysis }
+
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+\section*{Exercise Sheet 8}
+Sven Hirsch\\
+Columbia University, Fall 2025
+
+Instructions: Complete all problems. Show all work for full credit. You may collaborate, but solutions must be written individually. Please turn in your solutions by $11 / 15 / 2025$.
+
+\section*{Exercise 1: Differentiable functions}
+Analyze which of the following functions are differentiable:
+
+\begin{enumerate}
+  \item The function $f: \mathbb{R} \rightarrow \mathbb{R}$ with $f(x)=|x|$.
+  \item The function $g: \mathbb{R} \rightarrow \mathbb{R}$ with $g(x)=0$ for $x \leq 0$ and $g(x)=x^{2} \sin \left(\frac{1}{x}\right)$ for $x>0$.
+\end{enumerate}
+
+\section*{Exercise 2: Constant functions}
+Let $a>1$. Suppose that $f: \mathbb{R} \rightarrow \mathbb{R}$ satisfies $|f(x)-f(y)| \leq|x-y|^{a}$ for all $x, y \in \mathbb{R}$. Show that $f$ is constant.
+
+\section*{Exercise 3: Monotone functions}
+Let $f:[0,1] \rightarrow \mathbb{R}$ be a differentiable function. Show that $f$ monotonically increasing if and only if $f^{\prime}(x) \geq 0$ for all $x \in[0,1]$.
+
+\section*{Exercise 4: Derivatives}
+Let $f, g, h: \mathbb{R} \rightarrow \mathbb{R}$ be differentiable functions. Moreover, assume that $g(x) \neq 0$ for all $x \in \mathbb{R}$, and that $h$ is bijective with inverse function $h^{-1}$. Are $\frac{f}{g}$ and $h^{-1}$ also differentiable?
+
+\section*{Exercise 5: Lipschitz functions}
+Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be a differentiable functions such that $f^{\prime}$ is bounded. Prove that $f$ is Lipschitz continuous.
+
+\section*{Exercise 6: Power rule}
+Let $r \in \mathbb{R}$. Compute the derivative of the function $f: \mathbb{R}_{>0} \rightarrow \mathbb{R}$ given by $f(x)=x^{r}$.
+
+\section*{Exercise 7: Newton's method}
+Complete Exercise 25 of Chapter 5 in Rudin's book.
+
+\section*{Exercise 8: Ordinary differential equations}
+Complete Exercise 27 of Chapter 5 in Rudin's book.\\
+Bonus questions: Under the same assumptions as Exercise 27, prove that solutions to the initial value problem exist. More precisely, given $a, c \in \mathbb{R}$, show that there exists $\varepsilon>0$ and a unique function $f:[a, a+\varepsilon] \rightarrow \mathbb{R}$ such that $f(a)=c$ and $f^{\prime}(x)=\phi(x, f(x))$ for $x \in[a, a+\varepsilon]$.
+
+Hint: Define iteratively a sequence of functions by setting $y_{0}=c$ and
+
+$$
+y_{i+1}(t)=c+\int_{a}^{t} \phi\left(x, y_{i}(x)\right) d x
+$$
+
+and use the Banach fixed point theorem. You do not need to show that the underlying function space is complete.
+
+Sven Hirsch\\
+Columbia University\\
+Fall 2025
+
+
+\end{document}
