@@ -1,0 +1,176 @@
+\documentclass[letterpaper]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{LightRubineRed}{RubineRed!70}
+\colorlet{Mycolor1}{green!10!orange}
+\definecolor{Mycolor2}{HTML}{00F9DE}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref} 
+\usepackage{xcolor} % For custom colors
+\lstset{
+	language=Python,                % Choose the language (e.g., Python, C, R)
+	basicstyle=\ttfamily\small, % Font size and type
+	keywordstyle=\color{blue},  % Keywords color
+	commentstyle=\color{gray},  % Comments color
+	stringstyle=\color{red},    % String color
+	numbers=left,               % Line numbers
+	numberstyle=\tiny\color{gray}, % Line number style
+	stepnumber=1,               % Numbering step
+	breaklines=true,            % Auto line break
+	backgroundcolor=\color{black!5}, % Light gray background
+	frame=single,               % Frame around the code
+}
+\usepackage{float}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+
+	\title{Homework 7, MATH 4061}
+	\author{Zongyi Liu}
+	\date{Fri, Oct 17, 2025}
+	\begin{document}
+		\maketitle
+		
+		\section{Question 1}
+		\textbf{Uniformly and Lipschitz continuous functions}
+		
+		Consider the functions $f, g: \mathbb{R}_{\geq 0} \rightarrow \mathbb{R}$ given by $f(x)=x^{2}$ and $g(x)=\sqrt{x}$. Show that $f$ is continuous but not uniformly continuous, and show that $g$ is uniformly continuous but not Lipschitz continuous.
+		
+		
+	
+		
+		\textbf{Answer}
+		
+		\clearpage
+	
+	
+	\section{Question 2}
+	\textbf{Continuity}
+	
+	Let $f: \mathbb{R}^{n} \rightarrow \mathbb{R}, g: \mathbb{R}^{n} \rightarrow \mathbb{R}, \lambda \in \mathbb{R}$. Show that the functions $f+g$, and $\lambda f$ are also continuous.
+	
+\textbf{Answer}
+
+\clearpage
+
+
+	\section{Question 3}
+\textbf{Monotone functions}
+
+Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be a monotonically increasing function. Show that the set of points where $f$ is discontinuous is at most countable.
+
+
+\textbf{Answer}
+
+\clearpage
+
+
+\section{Question 4}
+\textbf{Sequences of continuous functions}
+
+Let $\left(f_{n}\right)_{n \in \mathbb{N}}$ be a sequence of continuous functions on the interval $[0,1]$ and suppose that there exists a function $f:[0,1] \rightarrow \mathbb{R}$ such that
+
+$$
+\lim _{n \rightarrow \infty} f_{n}(x)=f(x)
+$$
+
+for all $x \in[0,1]$. Is $f$ also continuous?
+
+\textbf{Answer}
+
+\clearpage
+
+	\section{Question 5}
+	
+\textbf{Convex functions}
+
+Let $[a, b] \subset \mathbb{R}$ be a non-empty interval. A function $f:[a, b] \rightarrow \mathbb{R}$ is called convex if
+
+$$
+f(\lambda x+(1-\lambda) y) \leq \lambda f(x)+(1-\lambda) f(y)
+$$
+
+for all $x, y \in[a, b]$ and $\lambda \in[0,1]$. Show that $f$ is continuous. Moreover, given a continuous function $g:[a, b] \rightarrow \mathbb{R}$ which satisfies
+
+$$
+g\left(\frac{1}{2} x+\frac{1}{2} y\right) \leq \frac{1}{2} g(x)+\frac{1}{2} g(y)
+$$
+
+for all $x, y \in[a, b]$, show that $g$ is convex.
+
+\textbf{Answer}
+
+\clearpage
+
+\section{Question 6}
+
+\textbf{Constant functions}
+
+Suppose that $f: \mathbb{R} \rightarrow \mathbb{R}$ satisfies $|f(x)-f(y)| \leq(x-y)^{2}$ for all $x, y \in \mathbb{R}$. Show that $f$ is constant.
+
+
+\textbf{Answer}
+
+\clearpage
+
+\section{Question 7}
+
+\textbf{Path-connected sets}
+
+Let ($X, d$) be a metric space and let $A \subseteq X$ be path-connected. Show that $A$ is also connected.
+
+
+\textbf{Answer}
+
+\clearpage
+
+\section{Question 8}
+
+\textbf{Topologist's Sine Curve}
+
+Show that the set
+
+$$
+T=\{(x, \sin (1 / x)): x \in(0,1]\} \cup(\{0\} \times[-1,1]) \subset \mathbb{R}^{2} .
+$$
+
+is connected but not path-connected.
+
+\textbf{Answer}
+
+\clearpage
+	
+	
+	\end{document}
