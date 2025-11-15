@@ -1,0 +1,212 @@
+\documentclass[letterpaper]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{LightRubineRed}{RubineRed!70}
+\colorlet{Mycolor1}{green!10!orange}
+\definecolor{Mycolor2}{HTML}{00F9DE}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref} 
+\usepackage{xcolor} % For custom colors
+\lstset{
+	language=Python,                % Choose the language (e.g., Python, C, R)
+	basicstyle=\ttfamily\small, % Font size and type
+	keywordstyle=\color{blue},  % Keywords color
+	commentstyle=\color{gray},  % Comments color
+	stringstyle=\color{red},    % String color
+	numbers=left,               % Line numbers
+	numberstyle=\tiny\color{gray}, % Line number style
+	stepnumber=1,               % Numbering step
+	breaklines=true,            % Auto line break
+	backgroundcolor=\color{black!5}, % Light gray background
+	frame=single,               % Frame around the code
+}
+\usepackage{float}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+
+	\title{Homework 5, MATH 4061}
+	\author{Zongyi Liu}
+	\date{Mon, Oct 13, 2025}
+	
+	\begin{document}
+		\maketitle
+		Unless the contrary is explicitly stated, all numbers that are mentioned in these exercises are understood to be real.
+		
+	
+		\noindent
+		\textbf{1.} If $r$ is rational ($r \ne 0$) and $x$ is irrational, prove that $r + x$ and $rx$ are irrational.
+		
+	
+		\noindent
+		\textbf{2.} Prove that there is no rational number whose square is $12$.
+		
+	
+		\noindent
+		\textbf{3.} Prove Proposition~1.15.
+		
+		
+		\noindent
+		\textbf{4.} Let $E$ be a nonempty subset of an ordered set; suppose $\alpha$ is a lower bound of $E$ and $\beta$ is an upper bound of $E$.  Prove that $\alpha \le \beta$.
+		
+		
+		\noindent
+		\textbf{5.} Let $A$ be a nonempty set of real numbers which is bounded below.  Let $-A$ be the set of all numbers $-x$, where $x \in A$.  Prove that
+		\[
+		\inf A = -\sup(-A).
+		\]
+		
+		\clearpage
+		
+		\noindent
+		\textbf{6.} Fix $b > 1$.
+		\begin{enumerate}
+			\item[(a)] If $m,n,p,q$ are integers, $n>0$, $q>0$, and $r = m/n = p/q$, prove that
+			\[
+			(b^{m})^{1/n} = (b^{p})^{1/q}.
+			\]
+			Hence it makes sense to define $b^{r} = (b^{m})^{1/n}$.
+			
+			\item[(b)] Prove that $b^{r+s} = b^{r}b^{s}$ if $r$ and $s$ are rational.
+			
+			\item[(c)] If $x$ is real, define $B(x)$ to be the set of all numbers $b^{t}$, where $t$ is rational and $t \le x$.  Prove that
+			\[
+			b^{r} = \sup B(r)
+			\]
+			when $r$ is rational.  Hence it makes sense to define
+			\[
+			b^{x} = \sup B(x)
+			\]
+			for every real $x$.
+			
+			\item[(d)] Prove that $b^{x+y} = b^{x}b^{y}$ for all real $x$ and $y$.
+		\end{enumerate}
+	
+	\clearpage
+	\noindent
+	\textbf{7.} Fix $b > 1$, $y > 0$, and prove that there is a unique real $x$ such that $b^x = y$, by completing the following outline. (This $x$ is called the \textit{logarithm of $y$ to the base $b$}.)
+	\begin{enumerate}
+		\item[(a)] For any positive integer $n$, $b^n - 1 \ge n(b - 1)$.
+		\item[(b)] Hence $b - 1 \ge n(b^{1/n} - 1)$.
+		\item[(c)] If $t > 1$ and $n > (b - 1)/(t - 1)$, then $b^{1/n} < t$.
+		\item[(d)] If $w$ is such that $b^w < y$, then $b^{w+(1/n)} < y$ for sufficiently large $n$; to see this, apply part (c) with $t = y \cdot b^{-w}$.
+		\item[(e)] If $b^w > y$, then $b^{w-(1/n)} > y$ for sufficiently large $n$.
+		\item[(f)] Let $A$ be the set of all $w$ such that $b^w < y$, and show that $x = \sup A$ satisfies $b^x = y$.
+		\item[(g)] Prove that this $x$ is unique.
+	\end{enumerate}
+	
+	\noindent
+	\textbf{8.} Prove that no order can be defined in the complex field that turns it into an ordered field. \textit{Hint:} $-1$ is a square.
+	
+	\noindent
+	\textbf{9.} Suppose $z = a + bi$, $w = c + di$. Define $z < w$ if $a < c$, and also if $a = c$ but $b < d$. Prove that this turns the set of all complex numbers into an ordered set. (This type of order relation is called a \textit{dictionary order}, or \textit{lexicographic order}, for obvious reasons.) Does this ordered set have the least-upper-bound property?
+	\clearpage
+	\noindent
+	\textbf{10.} Suppose $z = a + bi$, $w = u + iv$, and
+	\[
+	a = \left(\frac{|w| + u}{2}\right)^{1/2}, \qquad
+	b = \left(\frac{|w| - u}{2}\right)^{1/2}.
+	\]
+	
+	
+	\noindent
+	Prove that $z^2 = w$ if $v \ge 0$ and that $(\bar{z})^2 = w$ if $v \le 0$. Conclude that every complex number (with one exception!) has two complex square roots.
+	
+	\noindent
+	\textbf{11.} If $z$ is a complex number, prove that there exists an $r \ge 0$ and a complex number $w$ with $|w| = 1$ such that $z = rw$. Are $w$ and $r$ always uniquely determined by $z$?
+	
+	\noindent
+	\textbf{12.} If $z_1, \ldots, z_n$ are complex, prove that
+	\[
+	|z_1 + z_2 + \cdots + z_n| \le |z_1| + |z_2| + \cdots + |z_n|.
+	\]
+	
+	\noindent
+	\textbf{13.} If $x, y$ are complex, prove that
+	\[
+	\bigl||x| - |y|\bigr| \le |x - y|.
+	\]
+	
+	\noindent
+	\textbf{14.} If $z$ is a complex number such that $|z| = 1$, that is, such that $z\bar{z} = 1$, compute
+	\[
+	|1 + z|^2 + |1 - z|^2.
+	\]
+	
+	\noindent
+	\textbf{15.} Under what conditions does equality hold in the Schwarz inequality?
+	\clearpage
+	\noindent
+	\textbf{16.} Suppose $k \ge 3$, $x, y \in \mathbb{R}^k$, $|x - y| = d > 0$, and $r > 0$. Prove:
+	\begin{enumerate}
+		\item[(a)] If $2r > d$, there are infinitely many $z \in \mathbb{R}^k$ such that
+		\[
+		|z - x| = |z - y| = r.
+		\]
+		\item[(b)] If $2r = d$, there is exactly one such $z$.
+		\item[(c)] If $2r < d$, there is no such $z$.
+	\end{enumerate}
+	How must these statements be modified if $k$ is $2$ or $1$?
+	
+	\noindent
+	\textbf{17.} Prove that
+	\[
+	|x + y|^2 + |x - y|^2 = 2|x|^2 + 2|y|^2
+	\]
+	if $x \in \mathbb{R}^k$ and $y \in \mathbb{R}^k$. Interpret this geometrically, as a statement about parallelograms.
+	
+	\noindent
+	\textbf{18.} If $k \ge 2$ and $x \in \mathbb{R}^k$, prove that there exists $y \in \mathbb{R}^k$ such that $y \ne 0$ but $x \cdot y = 0$. Is this also true if $k = 1$?
+	
+	
+	
+	\noindent
+	\textbf{19.} Suppose $a \in \mathbb{R}^k$, $b \in \mathbb{R}^k$. Find $c \in \mathbb{R}^k$ and $r > 0$ such that
+	\[
+	|x - a| = 2|x - b|
+	\]
+	if and only if
+	\[
+	|x - c| = r.
+	\]
+	\textit{(Solution: }$3c = 4b - a,\; 3r = 2|b - a|.$\textit{)}
+	
+	\noindent
+	\textbf{20.} With reference to the Appendix, suppose that property (III) were omitted from the definition of a cut.  
+	Keep the same definitions of order and addition.  
+	Show that the resulting ordered set has the least-upper-bound property, that addition satisfies axioms (A1) to (A4)  
+	(with a slightly different zero-element!) but that (A5) fails.
+	
+	\end{document}
