@@ -1,1 +1,191 @@
+\documentclass[letterpaper]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{LightRubineRed}{RubineRed!70}
+\colorlet{Mycolor1}{green!10!orange}
+\definecolor{Mycolor2}{HTML}{00F9DE}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref} 
+\usepackage{xcolor} % For custom colors
+\lstset{
+	language=Python,                % Choose the language (e.g., Python, C, R)
+	basicstyle=\ttfamily\small, % Font size and type
+	keywordstyle=\color{blue},  % Keywords color
+	commentstyle=\color{gray},  % Comments color
+	stringstyle=\color{red},    % String color
+	numbers=left,               % Line numbers
+	numberstyle=\tiny\color{gray}, % Line number style
+	stepnumber=1,               % Numbering step
+	breaklines=true,            % Auto line break
+	backgroundcolor=\color{black!5}, % Light gray background
+	frame=single,               % Frame around the code
+}
+\usepackage{float}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
 
+	\title{Homework 6, MATH 4061}
+	\author{Zongyi Liu}
+	\date{Fri, Oct 17, 2025}
+	\begin{document}
+		\maketitle
+		
+		\section{Question 1}
+		\textbf{Comparison test}
+		
+		Let $\left\{a_{i}\right\}_{i=0}^{\infty},\left\{b_{i}\right\}_{i=0}^{\infty}$ and $\left\{c_{i}\right\}_{i=0}^{\infty}$ be sequences of real numbers and let $i_{0} \in \mathbb{N}$. Show that the following holds:
+		
+		\begin{enumerate}
+			\item If $\left|a_{i}\right| \leq b_{i}$ for all $i \geq i_{0}$ and if $\sum_{i=0}^{\infty} b_{i}$ converges, then $\sum_{i=0}^{\infty} a_{i}$ converges absolutely.
+			\item If $a_{i} \geq c_{i} \geq 0$ for $i \geq i_{0}$ and if $\sum_{i=0}^{\infty} c_{i}$ diverges, then $\sum_{i=0}^{\infty} a_{i}$ also diverges.
+		\end{enumerate}
+	
+		
+		\textbf{Answer}
+		
+		\clearpage
+	
+	
+	\section{Question 2}
+	\textbf{Root test}
+	
+	Let $\left(x_{n}\right)_{n \in \mathbb{N}}$ be a sequence in $\mathbb{R}$. Show that the series $\sum_{n=0}^{\infty} a_{n}$
+	
+	\begin{itemize}
+		\item converges absolutely if $\limsup _{n \rightarrow \infty}\left|a_{n}\right|^{\frac{1}{n}}<1$,
+		\item diverges if $\lim \sup _{n \rightarrow \infty}\left|a_{n}\right|^{\frac{1}{n}}>1$.
+	\end{itemize}
+
+\textbf{Answer}
+
+\clearpage
+
+
+	\section{Question 3}
+\textbf{Series and monotone sequences}
+
+Let $\sum_{n=0}^{\infty} a_{n}$ be a convergent series and let $b_{n}$ be a monotonically increasing and bounded sequence. Prove that $\sum_{n=0}^{\infty} a_{n} b_{n}$ also converges.
+
+\textbf{Answer}
+
+\clearpage
+
+
+\section{Question 4}
+\textbf{Riemann rearrangement theorem}
+
+Let $\sum_{n=1}^{\infty} a_{n}$ be a series of real numbers. A rearrangement of this series is a new series
+
+$$
+\sum_{n=1}^{\infty} b_{n},
+$$
+
+where $b_{n}=a_{\sigma(n)}$ for some bijection $\sigma: \mathbb{N} \rightarrow \mathbb{N}$. The bijection $\sigma$ reorders the terms of the original series without omitting or repeating any of them.
+
+Let $c \in \mathbb{R}$ and suppose that $\sum_{n=1}^{\infty} a_{n}$ converges conditionally, i.e. $\sum_{n=1}^{\infty} a_{n}$ converges, but $\sum_{n=1}^{\infty}\left|a_{n}\right|$ diverges. Show that there exists a rearrangement of $\sum_{n=1}^{\infty} a_{n}$ which converges to $c$.
+
+\textbf{Answer}
+
+\clearpage
+
+	\section{Question 5}
+	
+\textbf{Leibniz criterion}
+
+Suppose that $\left\{a_{i}\right\}_{i=0}^{\infty}$ is a sequence of non-negative real numbers which is decreasing and which converges to zero. Show that
+
+$$
+\sum_{i=0}^{\infty}(-1)^{i} a_{i}
+$$
+
+converges. Does this series also converge absolutely?
+
+\textbf{Answer}
+
+\clearpage
+
+\section{Question 6}
+
+\textbf{Radius of convergence}
+
+Let $z \in \mathbb{C}$ and let $\left\{a_{i}\right\}_{i=0}^{\infty}$ be a sequence of complex numbers. Given the power series $\sum_{i=0}^{\infty} a_{i} z^{i}$, recall that the radius of convergence $R$ is defined by $R=\frac{1}{\rho}$ where $\rho=\limsup _{i \rightarrow \infty}\left|a_{i}\right|^{\frac{1}{i}}$. Show that the power series converges for $|z|<R$ and diverges for $|z|>R$.
+
+\textbf{Answer}
+
+\clearpage
+
+\section{Question 7}
+
+\textbf{Euler's identity}
+
+We define for $z \in \mathbb{C}$ the exponential, the sine, and the cosine function by
+
+$$
+\exp (z)=\sum_{n=0}^{\infty} \frac{z^{n}}{n!}, \quad \sin (z)=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2 n+1)!} z^{2 n+1}, \quad \cos (z)=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2 n)!} z^{2 n}
+$$
+
+For which values of $z \in \mathbb{C}$ do these series converge? Moreover, show that
+
+$$
+\exp (i z)=\cos (z)+i \sin (z)
+$$
+
+
+\textbf{Answer}
+
+\clearpage
+
+\section{Question 8}
+
+\textbf{Continuous functions}
+
+Analyze where the following functions are continuous:
+
+\begin{enumerate}
+\item $f: \mathbb{R} \rightarrow \mathbb{R}$ given by $f(x)=|x|$.
+\item $g: \mathbb{R} \rightarrow \mathbb{R}$ defined by $g(x)=0$ for $x \in \mathbb{Q}$ and $g(x)=x$ for $x \in \mathbb{R} \backslash \mathbb{Q}$.
+\item $h: \mathbb{R} \backslash\{0\} \rightarrow \mathbb{R}$ defined by $h(x)=\frac{|x|}{x}$.
+\item The distance function $d: X \times X \rightarrow \mathbb{R}$ where ( $X, d$ ) is any metric space.
+\item The Cantor function $c:[0,1] \rightarrow[0,1]$.
+\item The popcorn function $p:[0: 1] \rightarrow[0,1]$
+\end{enumerate}
+
+\textbf{Answer}
+
+\clearpage
+	
+	
+	\end{document}
