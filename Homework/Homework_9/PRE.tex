@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+
+\title{Introduction to Modern Analysis }
+
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+\section*{Exercise Sheet 9}
+Sven Hirsch\\
+Columbia University, Fall 2025
+
+Instructions: Complete all problems. Show all work for full credit. You may collaborate, but solutions must be written individually. Please turn in your solutions by $11 / 30 / 2025$.
+
+\section*{Exercise 1: Integration via Darboux sums}
+Let $c>0$. Evaluate the following integral $\int_{0}^{c} x d x$ using Darboux sums, and not using the fundamental theorem of calculus.
+
+\section*{Exercise 2: Properties of the integral}
+Let $f, g:[a, b] \rightarrow \mathbb{R}$ be Darboux integrable functions and let $c \in \mathbb{R}$. Show that the integral has the following properties:
+
+\begin{enumerate}
+  \item $\int_{a}^{b}(f+g)=\int_{a}^{b} f+\int_{a}^{b} g$.
+  \item $\int_{a}^{b}(c f)=c \int_{a}^{b} f$.
+  \item $\int_{a}^{b} f \leq \int_{a}^{b} g$ if we additionally assume $f \leq g$.
+  \item $\left|\int_{a}^{b} f\right| \leq \int_{a}^{b}|f|$.
+\end{enumerate}
+
+\section*{Exercise 3: Composition of integrable functions}
+Let $f, g:[0,1] \rightarrow[0,1]$ be Darboux integrable functions. Is the composition $f \circ g$ also Darboux integrable?
+
+\section*{Exercise 4: Characterization of integrability}
+Let $f$ be a bounded function on the interval $[a, b]$. Show that $f$ is Darboux integrable if and only if the set of discontinuities is of measure zero.
+
+Here we say a set $A \subset \mathbb{R}$ is of measure zero if for every $\varepsilon>0$ there exists a family of open intervals $\left\{O_{n}\right\}_{n \in \mathbb{N}}$ such that $A \subseteq \bigcup_{n \in \mathbb{N}} O_{n}$ and such that the total length of the intervals is less than $\varepsilon$.
+
+\section*{Exercise 5: More integrals}
+Compute the following integrals.
+
+\begin{enumerate}
+  \item $\int_{0}^{1} x^{2} e^{x} d x$,
+  \item $\int_{-1}^{1} \sqrt{1-x^{2}} d x$.
+\end{enumerate}
+
+\section*{Exercise 6: Hölder's inequality}
+Let $f, g:[a, b] \rightarrow \mathbb{R}$ be two Darboux integrable functions and let $p, q$ be two positive real numbers such that $\frac{1}{p}+\frac{1}{q}=1$. Show that
+
+$$
+\left|\int_{a}^{b} f g d x\right| \leq\left(\int_{a}^{b}|f|^{p} d x\right)^{\frac{1}{p}}\left(\int_{a}^{b}|g|^{q} d x\right)^{\frac{1}{q}}
+$$
+
+\section*{Exercise 7: Length of curves}
+Let $f:[a, b] \rightarrow \mathbb{R}$ be differentiable. We define the length of the graph of $f$ via
+
+$$
+\mathcal{L}(f)=\sup _{P \in \mathcal{P}} \sum_{k=1}^{n} \sqrt{\left(x_{k}-x_{k-1}\right)^{2}+\left(f\left(x_{k}\right)-f\left(x_{k-1}\right)\right)^{2}}
+$$
+
+where $\mathcal{P}$ is the set of all partitions $P=\left\{x_{0}, \ldots, x_{n}\right\}$ of the interval $[a, b]$. Show that
+
+$$
+\mathcal{L}(f)=\int_{a}^{b} \sqrt{1+f^{\prime}(x)^{2}} d x
+$$
+
+Use the above formula to show that the circumference of a circle of radius $r$ equals $2 \pi r$.
+
+\section*{Exercise 8: Fundamental lemma of the calculus of variations (4 points)}
+Let $f:[a, b] \rightarrow \mathbb{R}$ be a continuous function such that
+
+$$
+\int_{a}^{b} f(x) \phi(x) d x=0
+$$
+
+for every continuous function $\phi:[a, b] \rightarrow \mathbb{R}$. Show that $f(x)=0$ for all $x \in[a, b]$.
+
+Sven Hirsch\\
+Columbia University\\
+Fall 2025
+
+
+\end{document}
