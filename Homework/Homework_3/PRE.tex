@@ -1,0 +1,172 @@
+\documentclass[letterpaper]{article} 
+\linespread{0.85}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{LightRubineRed}{RubineRed!70}
+\colorlet{Mycolor1}{green!10!orange}
+\definecolor{Mycolor2}{HTML}{00F9DE}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref} 
+\usepackage{xcolor} % For custom colors
+\lstset{
+	language=Python,                % Choose the language (e.g., Python, C, R)
+	basicstyle=\ttfamily\small, % Font size and type
+	keywordstyle=\color{blue},  % Keywords color
+	commentstyle=\color{gray},  % Comments color
+	stringstyle=\color{red},    % String color
+	numbers=left,               % Line numbers
+	numberstyle=\tiny\color{gray}, % Line number style
+	stepnumber=1,               % Numbering step
+	breaklines=true,            % Auto line break
+	backgroundcolor=\color{black!5}, % Light gray background
+	frame=single,               % Frame around the code
+}
+\usepackage{float}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+
+	\title{Homework 3, MATH 4061}
+	\author{Zongyi Liu}
+	\date{Sat, Sept 27, 2025}
+	\begin{document}
+		\maketitle
+		
+		\section{Question 1}
+		\textbf{ Isolated points}
+		
+		Let ($X, d$) be a metric space and let $A \subseteq X$. Suppose that $A$ is bounded and that every $a \in A$ is an isolated point. Prove or disprove whether $A$ must be a finite set, i.e. $A=\left\{a_{1}, \ldots, a_{n}\right\}$.
+
+
+		\textbf{Answer}
+		
+		
+		\clearpage
+		
+		\section{Question 2}
+		
+		\textbf{Hilbert's Hotel}
+		
+		
+		A set $X$ is called countable if there exists a bijection of $X$ onto a subset of the natural numbers $\mathbb{N}$. A set $X$ is called uncountable if it is not countable.\\
+		(a) Show that the set $\mathbb{N} \cup\{-1\}$ is countable.\\
+		(b) Show that the integer numbers $\mathbb{Z}$ are countable.\\
+		(c) Show that the rational numbers $\mathbb{Q}$ are countable.
+		
+	\textbf{Answer}
+	
+			\clearpage
+	
+	\section{Question 3}
+	
+	\textbf{Open and closed sets}
+	
+     Let $a<b \in \mathbb{R}, \varepsilon>0$, and let $A \subset B_{1}(0)$ be a closed non-empty subset of $\mathbb{R}^{2}$. Analyze whether the following sets are open or closed.\\
+ (a) The interval $[a, b)$ as a subset of $\mathbb{R}$.\\
+(b) The set $(\mathbb{N} \times\{0\}) \cup B_{1}(0)$ as a subset of $\mathbb{R}^{2}$.\\
+(c) The set $A_{\varepsilon}:=\left\{x \in \mathbb{R}^{2}: \inf _{a \in A} d(x, a)<\varepsilon\right\}$ where $d$ is the Euclidean distance function on $\mathbb{R}^{2}$.\\
+(d) The set $\{x\} \subseteq X$ where $X$ is an arbitrary set equipped with the discrete metric and $x \in X$.
+
+\textbf{Answer}
+\clearpage
+\section{Question 4}
+
+\textbf{Supremum and closed sets}
+
+Let $A \subseteq \mathbb{R}$ be a bounded set and suppose that $A$ is closed. Show that $\sup A \in A$. What happens if $A$ is assumed to be open?
+
+\textbf{Answer}
+
+	\clearpage
+ \section{Question 5}
+ 
+ \textbf{Closure, interior and boundary}
+ 
+ 
+ Let ($X, d$) be a metric space and let $A, B \subseteq X$ be non-empty subsets. Show that the following properties hold:\\
+ (a) If $A \subseteq B$, then $\bar{A} \subseteq \bar{B}$.\\
+ (b) The closure $\bar{A}$ is a closed subset of $X$.\\
+ (c) The set $A \subseteq X$ is closed if and only if $A=\bar{A}$.\\
+ (d) The set $A \subseteq X$ is open if and only if $A=A^{\circ}$.\\
+ (e) If $X=\mathbb{R}$, and if $A \subset X$ is bounded from above, show that $\sup (A) \in \bar{A}$.\\
+ (f) We have $\partial(\partial A) \subseteq \partial A$.\\
+ (g) We have $\partial A=\bar{A} \cap \overline{A^{C}}$.
+
+\textbf{Answer}
+
+
+\clearpage
+
+
+
+ \section{Question 6}
+
+\textbf{Open covers}
+
+Find an open cover of the open ball $B_{1}(0) \subseteq \mathbb{R}^{7}$ which has no finite subcover. Explain your answer.
+
+\textbf{Answer}
+
+	\clearpage
+	
+ \section{Question 7}
+
+\textbf{Compactness}
+
+Show that the set
+
+$$
+A=\{0\} \cup\left\{\frac{1}{n}: n \in \mathbb{N}, n>0\right\} \subseteq \mathbb{R}
+$$
+
+is compact.
+
+\textbf{Answer}
+
+	\clearpage
+
+\section{Question 8}
+
+\textbf{Diameter of the closure}
+
+Let ( $X, d$ ) be a metric space and let $A \subset X$ be a bounded subset. Show that the diameter satisfies
+
+$$
+\operatorname{diam}(A)=\operatorname{diam}(\bar{A})
+$$
+
+\textbf{Answer}
+
+	\end{document}
