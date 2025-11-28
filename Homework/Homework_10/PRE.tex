@@ -1,0 +1,100 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+
+\title{Introduction to Modern Analysis }
+
+\author{Exercise Sheet 10\\
+Sven Hirsch\\
+Columbia University, Fall 2025}
+\date{}
+
+
+\begin{document}
+\maketitle
+Instructions: Complete all problems. Show all work for full credit. You may collaborate, but solutions must be written individually. Please turn in your solutions by 12/14/2025.
+
+\section*{Exercise 1: Uniform convergence}
+Let $f_{n}, g_{n}:(0,1) \rightarrow \mathbb{R}$ be two sequences of continuous functions such that both $\left(f_{n}\right)_{n \in \mathbb{N}}$ and $\left(g_{n}\right)_{n \in \mathbb{N}}$ converge uniformly for $n \rightarrow \infty$.\\
+a) In case $\left(f_{n}\right)_{n \in \mathbb{N}}$ and $\left(g_{n}\right)_{n \in \mathbb{N}}$ are sequences of bounded functions, show that also $\left(f_{n} g_{n}\right)_{n \in \mathbb{N}}$ converges uniformly for $n \rightarrow \infty$.\\
+b) Show that it is necessary to assume boundedness by giving an example where $\left(f_{n} g_{n}\right)_{n \in \mathbb{N}}$ does not converge uniformly.
+
+\section*{Exercise 2: Chain rule}
+Let $f:(a, b) \rightarrow \mathbb{R}$ and $g:(c, d) \rightarrow \mathbb{R}$ be functions such that $f((a, b)) \subset(c, d)$. Suppose that $f$ is differentiable at $x_{0} \in(a, b)$ and that $g$ is differentiable at $f\left(x_{0}\right)$. Prove that
+
+$$
+(g \circ f)^{\prime}\left(x_{0}\right)=g^{\prime}\left(f\left(x_{0}\right)\right) f^{\prime}\left(x_{0}\right) .
+$$
+
+\section*{Exercise 3: Integration by parts}
+Let $f, g:[a, b] \rightarrow \mathbb{R}$ be differentiable functions whose derivatives are Riemann integrable. Show that
+
+$$
+\int_{a}^{b} f(x) g^{\prime}(x) d x=f(b) g(b)-f(a) g(a)-\int_{a}^{b} f^{\prime}(x) g(x) d x
+$$
+
+\section*{Exercise 4: Integration by Substitution}
+Let $\varphi:[\alpha, \beta] \rightarrow[a, b]$ be a continuously differentiable, strictly monotone function, and let $f: [a, b] \rightarrow \mathbb{R}$ be continuous. Prove the substitution rule
+
+$$
+\int_{\varphi(\alpha)}^{\varphi(\beta)} f(u) d u=\int_{\alpha}^{\beta} f(\varphi(t)) \varphi^{\prime}(t) d t
+$$
+
+\section*{Exercise 5: Completeness of bounded continuous functions}
+Let $C_{b}([0,1])$ be the space of bounded continuous functions on the interval $[0,1]$. Define the norm
+
+$$
+\|f\|_{L^{1}}:=\int_{0}^{1}|f(x)| d x
+$$
+
+and the corresponding metric $d_{L^{1}}(f, g)=\|f-g\|_{L^{1}}$. Is the metric space $\left(C_{b}([0,1]), d_{L^{1}}\right)$ complete?
+
+\section*{Exercised 6: Convergence and differentiation}
+Let $f_{n}:[a, b] \rightarrow \mathbb{R}$ be a sequence of differentiable functions. Show that if $f_{n}$ converges uniformly to $f$, and if the derivatives $f_{n}^{\prime}$ converge uniformly to $g$, then $f$ is differentiable and $f^{\prime}=g$. By giving an example, show that the above assumptions are necessary. What does this imply for series?
+
+\section*{Exercise 7: Differentiation of Power Series}
+Let $\left(c_{n}\right)_{n \in \mathbb{N}}$ be a sequence of complex numbers, and consider the power series
+
+$$
+f(x)=\sum_{n=0}^{\infty} c_{n} x^{n}
+$$
+
+with radius of convergence $R>0$. Show that $f$ is differentiable on ( $-R, R$ ) and that its derivative is given by
+
+$$
+f^{\prime}(x)=\sum_{n=1}^{\infty} n c_{n} x^{n-1}
+$$
+
+and that the differentiated series also has radius of convergence $R$.
+
+\section*{Exercise 8: Uniform boundedness}
+Let $(X, d)$ be a compact metric space, and let $f_{n}: X \rightarrow \mathbb{R}, n \in \mathbb{N}$, be a pointwise bounded and uniformly equicontinuous sequence of functions, i.e.
+
+$$
+\forall x \in X: \exists M \in \mathbb{R}: \forall n \in \mathbb{N}:\left|f_{n}(x)\right| \leq M
+$$
+
+and
+
+$$
+\forall \varepsilon>0: \exists \delta>0: \forall x, y \in X: \forall n \in \mathbb{N}:\left(d_{X}(x, y) \leq \delta \Longrightarrow\left|f_{n}(x)-f_{n}(y)\right| \leq \varepsilon\right)
+$$
+
+Show that $\left(f_{n}\right)_{n \in \mathbb{N}}$ is also uniformly bounded, i.e.
+
+$$
+\exists C \in \mathbb{R}: \forall x \in X: \forall n \in \mathbb{N}:\left|f_{n}(x)\right| \leq C
+$$
+
+Sven Hirsch\\
+Columbia University\\
+Fall 2025
+
+
+\end{document}
