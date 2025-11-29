@@ -2,7 +2,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
-\usepackage{mathrsfs}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{array}
@@ -56,19 +55,18 @@
 }
 \usepackage{float}
 \usepackage[]{amsthm} %lets us use \begin{proof}
-	\usepackage[]{amssymb} %gives us the character \varnothing
-	
-	\title{Exercise 6, MATH 4061}
+\usepackage[]{amssymb} %gives us the character \varnothing
+
+	\title{Exercise 7, MATH 4061}
 	\author{Zongyi Liu}
-	\date{Thu, Nov 27, 2025}
+	\date{Sat, Nov 29, 2025}
 	
 	\begin{document}
 		\maketitle
 		
-		\section{Problem 1}
 		
-		Suppose $\alpha$ increases on $[a,b]$, $a \le x_0 \le b$, $\alpha$ is continuous at $x_0$, $f(x_0)=1$, and $f(x)=0$ if $x\ne x_0$. Prove that $f\in \mathcal{R}(\alpha)$ and that
-		$\displaystyle \int f\,d\alpha = 0$.
+		\section{Problem 1}
+		Prove that every uniformly convergent sequence of bounded functions is uniformly bounded.
 		
 		\textbf{Answer}
 		
@@ -76,34 +74,27 @@
 		
 		\section{Problem 2}
 		
-		Suppose $f \ge 0$, $f$ is continuous on $[a,b]$, and $\displaystyle \int_a^b f(x)\,dx = 0$. Prove that $f(x)=0$ for all $x\in [a,b]$. (Compare this with Exercise 1.)
-		
-		
-		\textbf{Answer}
-		
-		\clearpage
-		
-		\section{Problem 3}
-		
-		Define three functions $\beta_1,\beta_2,\beta_3$ as follows: $\beta_j(x)=0$ if $x<0$, $\beta_j(x)=1$ if $x>0$ for $j=1,2,3$; and $\beta_1(0)=0$, $\beta_2(0)=1$, $\beta_3(0)=\tfrac12$. Let $f$ be a bounded function on $[-1,1]$.
-		
-		(a) Prove that $f\in \mathcal{R}(\beta_1)$ if and only if $f(0+)=f(0)$ and that then $\displaystyle \int f\,d\beta_1 = f(0)$.
-		
-		(b) State and prove a similar result for $\beta_2$.
-		
-		(c) Prove that $f\in \mathcal{R}(\beta_3)$ if and only if $f$ is continuous at $0$.
-		
-		(d) If $f$ is continuous at $0$ prove that
-			$\displaystyle \int f\,d\beta_1 = \int f\,d\beta_2 = \int f\,d\beta_3 = f(0)$.
-
+		 If $\{f_n\}$ and $\{g_n\}$ converge uniformly on a set $E$, prove that $\{f_n + g_n\}$ converges uniformly on $E$. If, in addition, $\{f_n\}$ and $\{g_n\}$ are sequences of bounded functions, prove that $\{f_n g_n\}$ converges uniformly on $E$.
 		
 		\textbf{Answer}
 		
 		\clearpage
 		
+		\section{Problem 3} 
+		
+		Construct sequences $\{f_n\}, \{g_n\}$ which converge uniformly on some set $E$, but such that $\{f_n g_n\}$ does not converge uniformly on $E$ (of course, $\{f_n g_n\}$ must converge on $E$).
+		
+		\textbf{Answer}
+		
+		\clearpage
 		\section{Problem 4}
-		If $f(x)=0$ for all irrational $x$, $f(x)=1$ for all rational $x$, prove that $f\notin \mathcal{R}$ on $[a,b]$ for any $a<b$.
 		
+		Consider
+		\[
+		f(x) = \sum_{n=1}^{\infty} \frac{1}{1+n^2 x}.
+		\]
+		
+		For what values of $x$ does the series converge absolutely? On what intervals does it converge uniformly? On what intervals does it fail to converge uniformly? Is $f$ continuous wherever the series converges? Is $f$ bounded?
 		
 		\textbf{Answer}
 		
@@ -111,299 +102,347 @@
 		
 		\section{Problem 5}
 		
-		Suppose $f$ is a bounded real function on $[a,b]$, and $f^2 \in \mathcal{R}$ on $[a,b]$. Does it follow that $f\in \mathcal{R}$? Does the answer change if we assume that $f^3 \in \mathcal{R}$?
-		
-		
-		\textbf{Answer}
-		
-		\clearpage
-		
-		\section{Problem 6}
-		Let $P$ be the Cantor set constructed in Sec.\ 2.44. Let $f$ be a bounded real function on $[0,1]$ which is continuous at every point outside $P$. Prove that $f\in \mathcal{R}$ on $[0,1]$. \textit{Hint:} $P$ can be covered by finitely many segments whose total length can be made as small as desired. Proceed as in Theorem 6.10.
-		
-		
-		\textbf{Answer}
-		
-		\clearpage
-		
-		\section{Problem 7}
-		
-		Suppose $f$ is a real function on $(0,1]$ and $f\in \mathcal{R}$ on $[c,1]$ for every $c>0$. Define
+		 Let
 		\[
-		\int_0^1 f(x)\,dx = \lim_{c\to 0} \int_c^1 f(x)\,dx
+		f_n(x)=
+		\begin{cases}
+			0, & x < \frac{1}{n+1}, \\[8pt]
+			\sin^2 \frac{\pi}{x}, & \frac{1}{n+1} \le x \le \frac{1}{n}, \\[8pt]
+			0, & \frac{1}{n} < x.
+		\end{cases}
 		\]
-		if this limit exists (and is finite).
+		
+		Show that $\{f_n\}$ converges to a continuous function, but not uniformly. Use the series $\sum f_n$ to show that absolute convergence, even for all $x$, does not imply uniform convergence.
 		
 		\textbf{Answer}
 		
 		\clearpage
-		
-		\section{Problem 8}
-		
-		Suppose $f \in \mathscr{R}$ on $[a, b]$ for every $b>a$ where $a$ is fixed. Define
-		
-		$$
-		\int_{a}^{\infty} f(x) d x=\lim _{b \rightarrow \infty} \int_{a}^{b} f(x) d x
-		$$
-		
-		if this limit exists (and is finite). In that case, we say that the integral on the left converges. If it also converges after $f$ has been replaced by $|f|$, it is said to converge absolutely.
-		
-		Assume that $f(x) \geq 0$ and that $f$ decreases monotonically on $[1, \infty)$. Prove that
-		
-		$$
-		\int_{1}^{\infty} f(x) d x
-		$$
-		
-		converges if and only if
-		
-		$$
-		\sum_{n=1}^{\infty} f(n)
-		$$
-		
-		converges. (This is the so-called "integral test" for convergence of series.)
+	\section{Problem 6} 
+	Prove that the series
+		\[
+		\sum_{n=1}^{\infty} (-1)^n \frac{x^2+n}{n^2}
+		\]
+		converges uniformly in every bounded interval, but does not converge absolutely for any value of $x$.
 		
 		\textbf{Answer}
 		
 		\clearpage
+		\section{Problem 7} 
+		
+		For $n=1,2,3,\dots$, $x$ real, put
+		\[
+		f_n(x)=\frac{x}{1+nx^2}.
+		\]
+		Show that $\{f_n\}$ converges uniformly to a function $f$, and that the equation
+		\[
+		f'(x)=\lim_{n\to\infty} f_n'(x)
+		\]
+		is correct if $x\ne 0$, but false if $x=0$.
+		\section{Problem 8} 
+		
+		
+		If
+		\[
+		I(x)=
+		\begin{cases}
+			0, & x \le 0,\\
+			1, & x > 0,
+		\end{cases}
+		\]
+		if $\{x_n\}$ is a sequence of distinct points of $(a,b)$, and if $\sum |c_n|$ converges, prove that the series
+		\[
+		f(x)=\sum_{n=1}^{\infty} c_n I(x-x_n) \qquad (a \le x \le b)
+		\]
+		converges uniformly, and that $f$ is continuous for every $x \ne x_n$.
 		
 		\section{Problem 9}
 		
-		Show that integration by parts can sometimes be applied to the "improper" integrals defined in Exercises 7 and 8. (State appropriate hypotheses, formulate a theorem, and prove it.) For instance show that
+		Let $\{f_n\}$ be a sequence of continuous functions which converges uniformly to a function $f$ on a set $E$. Prove that
+		\[
+		\lim_{n\to\infty} f_n(x_n)=f(x)
+		\]
+		for every sequence of points $x_n \in E$ such that $x_n \to x$, and $x \in E$. Is the converse of this true?
 		
-		$$
-		\int_{0}^{\infty} \frac{\cos x}{1+x} d x=\int_{0}^{\infty} \frac{\sin x}{(1+x)^{2}} d x
-		$$
-		
-		Show that one of these integrals converges absolutely, but that the other does not.
-		
-		\textbf{Answer}
-		
-		\clearpage
 		
 		\section{Problem 10}
 		
+		Letting $(x)$ denote the fractional part of the real number $x$ (see Exercise 16, Chap. 4, for the definition), consider the function
+		\[
+		f(x) = \sum_{n=1}^{\infty} \frac{(nx)}{n^2} \qquad (x \text{ real}).
+		\]
 		
-		Let $p$ and $q$ be positive real numbers such that
+		Find all discontinuities of $f$, and show that they form a countable dense set.
+		Show that $f$ is nevertheless Riemann-integrable on every bounded interval.
 		
-		$$
-		\frac{1}{p}+\frac{1}{q}=1 .
-		$$
+		\section{Problem 11}
 		
-		Prove the following statements.
+		Suppose $\{f_n\}$, $\{g_n\}$ are defined on $E$, and  
 		
-		(a) If $u \geq 0$ and $v \geq 0$, then
+		(a) $\sum f_n$ has uniformly bounded partial sums;  
 		
-		$$
-		u v \leq \frac{u^{p}}{p}+\frac{v^{q}}{q}
-		$$
+		(b) $g_n \to 0$ uniformly on $E$;  
 		
-		Equality holds if and only if $u^{p}=v^{q}$.
+		(c) $g_1(x) \ge g_2(x) \ge g_3(x) \ge \cdots$ for every $x \in E$.  
 		
-		(b) If $f \in \mathscr{R}(\alpha), g \in \mathscr{R}(\alpha), f \geq 0, g \geq 0$, and
+		Prove that $\sum f_n g_n$ converges uniformly on $E$.  
+		\textit{Hint: Compare with Theorem 3.42.}
 		
-		$$
-		\int_{a}^{b} f^{p} d \alpha=1=\int_{a}^{b} g^{q} d \alpha
-		$$
-		
-		then
-		
-		$$
-		\int_{a}^{b} f g d \alpha \leq 1
-		$$
-		
-		(c) If $f$ and $g$ are complex functions in $\mathscr{R}(\alpha)$, then
-		
-		$$
-		\left|\int_{a}^{b} f g d \alpha\right| \leq\left\{\int_{a}^{b}|f|^{p} d \alpha\right\}^{1 / p}\left\{\int_{a}^{b}|g|^{a} d \alpha\right\}^{1 / a}
-		$$
-		
-		This is Hölder's inequality. When $p=q=2$ it is usually called the Schwarz inequality. (Note that Theorem 1.35 is a very special case of this.)
-	
-		(d) Show that Hölder's inequality is also true for the "improper" integrals described in Exercises 7 and 8.
-		
-		\textbf{Answer}
-		
-		\clearpage
-		
-		\section{Problem 11} 
-		
-		Let $\alpha$ be a fixed increasing function on $[a, b]$. For $u \in \mathscr{R}(\alpha)$, define
-		
-		$$
-		\|u\|_{2}=\left\{\int_{a}^{b}|u|^{2} d \alpha\right\}^{1 / 2}
-		$$
-		
-		Suppose $f, g, h \in \mathscr{R}(\alpha)$, and prove the triangle inequality
-		
-		$$
-		\|f-h\|_{2} \leq\|f-g\|_{2}+\|g-h\|_{2}
-		$$
-		
-		as a consequence of the Schwarz inequality, as in the proof of Theorem 1.37.
-		
-		\textbf{Answer}
-		
-		\clearpage
 		
 		\section{Problem 12}
 		
-		With the notations of Exercise 11, suppose $f \in \mathscr{R}(\alpha)$ and $\varepsilon>0$. Prove that there exists a continuous function $g$ on $[a, b]$ such that $\|f-g\|_{2}<\varepsilon$.
+		Suppose $g$ and $f_n$ $(n=1,2,3,\dots)$ are defined on $(0,\infty)$, are Riemann-integrable on $[t,T]$ whenever $0 < t < T < \infty$, $|f_n| \le g$, $f_n \to f$ uniformly on every compact subset of $(0,\infty)$, and
+		\[
+		\int_0^{\infty} g(x)\,dx < \infty.
+		\]
+		Prove that
+		\[
+		\lim_{n\to\infty} \int_0^{\infty} f_n(x)\,dx = \int_0^{\infty} f(x)\,dx.
+		\]
 		
-		Hint: Let $P=\left\{x_{0}, \ldots, x_{n}\right\}$ be a suitable partition of $[a, b]$, define
+		(See Exercises 7 and 8 of Chap. 6 for the relevant definitions.)
 		
-		$$
-		g(t)=\frac{x_{i}-t}{\Delta x_{i}} f\left(x_{i-1}\right)+\frac{t-x_{i-1}}{\Delta x_{i}} f\left(x_{i}\right)
-		$$
+		(This is a rather weak form of Lebesgue’s dominated convergence theorem (Theorem 11.32). Even in the context of the Riemann integral, uniform convergence can be replaced by pointwise convergence if it is assumed that $f \in \mathcal{R}$. (See the articles by F. Cunningham in Math. Mag., vol. 40, 1967, pp. 179–186, and by H. Kestelman in Amer. Math. Monthly, vol. 77, 1970, pp. 182–187.)
 		
-		if $x_{i-1} \leq t \leq x_{i}$.
-		
-		\textbf{Answer}
-		
-		\clearpage
 		
 		\section{Problem 13}
 		
-		Define
+		Assume that $\{f_n\}$ is a sequence of monotonically increasing functions on $\mathbb{R}^1$ with 
+		\[
+		0 \le f_n(x) \le 1 \quad \text{for all } x \text{ and all } n.
+		\]
 		
-		$$
-		f(x)=\int_{x}^{x+1} \sin \left(t^{2}\right) d t
-		$$
+		(a) Prove that there is a function $f$ and a sequence $\{n_k\}$ such that
+		\[
+		f(x)=\lim_{k\to\infty} f_{n_k}(x)
+		\]
+		for every $x\in \mathbb{R}^1$. (The existence of such a pointwise convergent subsequence is usually called Helly’s selection theorem.)
 		
-		(a) Prove that $|f(x)|<1 / x$ if $x>0$.
+		(b) If, moreover, $f$ is continuous, prove that $f_{n_k} \to f$ uniformly on compact sets.
 		
-		Hint: Put $t^{2}=u$ and integrate by parts, to show that $f(x)$ is equal to
+		\textit{Hint:} 
+		(i) Some subsequence $\{f_{n_t}\}$ converges at all rational points $r$, say, to $f(r)$.  
+		(ii) Define $f(x)$, for any $x\in \mathbb{R}^1$, to be $\sup f(r)$, the sup being taken over all $r\le x$.  
+		(iii) Show that $f_{n_t}(x)\to f(x)$ at every $x$ at which $f$ is continuous. (This is where monotonicity is strongly used.)  
+		(iv) A subsequence of $\{f_{n_t}\}$ converges at every point of discontinuity of $f$ since there are at most countably many such points.  
 		
-		$$
-		\frac{\cos \left(x^{2}\right)}{2 x}-\frac{\cos \left[(x+1)^{2}\right]}{2(x+1)}-\int_{x^{2}}^{(x+1)^{2}} \frac{\cos u}{4 u^{3 / 2}} d u
-		$$
+		This proves (a). To prove (b), modify your proof of (iii) appropriately.
 		
-		Replace $\cos u$ by -1.
-		
-		(b) Prove that
-		
-		$$
-		2 x f(x)=\cos \left(x^{2}\right)-\cos \left[(x+1)^{2}\right]+r(x)
-		$$
-		
-		where $|r(x)|<c / x$ and $c$ is a constant.
-		
-		(c) Find the upper and lower limits of $x f(x)$, as $x \rightarrow \infty$.
-		
-		(d) Does $\int_{0}^{\infty} \sin \left(t^{2}\right) d t$ converge?
-		
-		\textbf{Answer}
-		
-		\clearpage
 		
 		\section{Problem 14}
 		
-		Deal similarly with
+		 Let $f$ be a continuous real function on $\mathbb{R}^1$ with the following properties:  
+		\[
+		0 \le f(t) \le 1,\quad f(t+2)=f(t)\ \text{for every } t,
+		\]
+		and
+		\[
+		f(t)=
+		\begin{cases}
+			0 & (0 \le t \le \tfrac{1}{3}),\\[6pt]
+			1 & (\tfrac{2}{3} \le t \le 1).
+		\end{cases}
+		\]
 		
-		$$
-		f(x)=\int_{x}^{x+1} \sin \left(e^{t}\right) d t
-		$$
+		Put $\Phi(t)=(x(t),y(t))$, where
+		\[
+		x(t)=\sum_{n=1}^{\infty}2^{-n}f(3^{2n-1}t),\qquad  
+		y(t)=\sum_{n=1}^{\infty}2^{-n}f(3^{2n}t).
+		\]
 		
-		Show that
+		Prove that $\Phi$ is continuous and that $\Phi$ maps $I=[0,1]$ onto the unit square $I^2\subset \mathbb{R}^2$.  
+		In fact, show that $\Phi$ maps the Cantor set onto $I^2$.
 		
-		$$
-		e^{x}|f(x)|<2
-		$$
+		\textit{Hint:} Each $(x_0,y_0)\in I^2$ has the form
+		\[
+		x_0=\sum_{n=1}^{\infty}2^{-n}a_{2n-1},\qquad
+		y_0=\sum_{n=1}^{\infty}2^{-n}a_{2n},
+		\]
+		where each $a_i$ is $0$ or $1$.  
 		
-		and that
-		
-		$$
-		e^{x} f(x)=\cos \left(e^{x}\right)-e^{-1} \cos \left(e^{x+1}\right)+r(x)
-		$$
-		
-		where $|r(x)|<C e^{-x}$, for some constant $C$.
-		
-		\textbf{Answer}
-		
-		\clearpage
+		If
+		\[
+		t_0=\sum_{i=1}^{\infty}3^{-i-1}(2a_i),
+		\]
+		show that $f(3^k t_0)=a_k$, and hence that $x(t_0)=x_0$, $y(t_0)=y_0$.  
+		(This simple example of a so-called “space-filling curve’’ is due to I. J. Schoenberg, Bull. A.M.S., vol. 44, 1938, pp. 519.)
 		
 		\section{Problem 15}
 		
-		Suppose $f$ is a real, continuously differentiable function on $[a, b], f(a)=f(b)=0$, and
-		
-		$$
-		\int_{a}^{b} f^{2}(x) d x=1
-		$$
-		
-		Prove that
-		
-		$$
-		\int_{a}^{b} x f(x) f^{\prime}(x) d x=-\frac{1}{2}
-		$$
-		
-		and that
-		
-		$$
-		\int_{a}^{b}\left[f^{\prime}(x)\right]^{2} d x \cdot \int_{a}^{b} x^{2} f^{2}(x) d x>4
-		$$
-		
-		\textbf{Answer}
-		
-		\clearpage
+		Suppose $f$ is a real continuous function on $\mathbb{R}^1$,  
+		$f_n(t)=f(nt)$ for $n=1,2,3,\dots$, and $\{f_n\}$ is equicontinuous on $[0,1]$.  
+		What conclusion can you draw about $f$?
 		
 		\section{Problem 16}
 		
-		For $1<s<\infty$, define
-
-$$
-\zeta(s)=\sum_{n=1}^{\infty} \frac{1}{n^{s}} .
-$$
-
-(This is Riemann's zeta function, of great importance in the study of the distribution of prime numbers.) Prove that
-
-(a) $\zeta(s)=s \int_{1}^{\infty} \frac{[x]}{x^{s+1}} d x$ and that
-
-(b) $\zeta(s)=\frac{s}{s-1}-s \int_{1}^{\infty} \frac{x-[x]}{x^{s+1}} d x$, where $[x]$ denotes the greatest integer $\leq x$. Prove that the integral in $(b)$ converges for all $s>0$.
-
-\emph{Hint}: To prove $(a)$, compute the difference between the integral over $[1, N]$ and the $N$ th partial sum of the series that defines $\zeta(s)$.\
+		Suppose $\{f_n\}$ is an equicontinuous sequence of functions on a compact set $K$, and $f_n$ converges pointwise on $K$ to $f$.  
+		Prove that $\{f_n\}$ converges uniformly on $K$.
 		
-		\textbf{Answer}
+			\section{Problem 17}
+			
+			Define the notions of uniform convergence and equicontinuity for mappings into any metric space. 
+		Show that Theorems 7.9 and 7.12 are valid for mappings into any metric space, that Theorems 7.8 and 7.11 are valid for mappings into any complete metric space, and that Theorems 7.10, 7.16, 7.17, 7.24, and 7.25 hold for vector-valued functions, that is, for mappings into any $\mathbb{R}^k$.
 		
-		\clearpage
-		
-		\section{Problem 17}
-		
-		Suppose $\alpha$ increases monotonically on $[a, b], g$ is continuous, and $g(x)=G^{\prime}(x)$ for $a \leq x \leq b$. Prove that
-		
-		$$
-		\int_{a}^{b} \alpha(x) g(x) d x=G(b) \alpha(b)-G(a) \alpha(a)-\int_{a}^{b} G d \alpha
-		$$
-		
-		\emph{Hint}: Take $g$ real, without loss of generality. Given $P=\left\{x_{0}, x_{1}, \ldots, x_{n}\right\}$, choose $t_{i} \in\left(x_{i-1}, x_{i}\right)$ so that $g\left(t_{i}\right) \Delta x_{i}=G\left(x_{i}\right)-G\left(x_{i-1}\right)$. Show that
-		
-		$$
-		\sum_{i=1}^{n} \alpha\left(x_{i}\right) g\left(t_{i}\right) \Delta x_{i}=G(b) \alpha(b)-G(a) \alpha(a)-\sum_{i=1}^{n} G\left(x_{i-1}\right) \Delta \alpha_{i} .
-		$$
-		
-		\textbf{Answer}
-		
-		\clearpage
 		
 		\section{Problem 18}
+		 
+		Let $\{f_n\}$ be a uniformly bounded sequence of functions which are Riemann-integrable on $[a,b]$, and put
+		\[
+		F_n(x)=\int_a^x f_n(t)\,dt \qquad (a\le x\le b).
+		\]
+		Prove that there exists a subsequence $\{F_{n_k}\}$ which converges uniformly on $[a,b]$.
 		
-		Let $\gamma_{1}, \gamma_{2}, \gamma_{3}$ be curves in the complex plane, defined on $[0,2 \pi]$ by
+		\section{Problem 19} 
+		
+		Let $K$ be a compact metric space, let $S$ be a subset of $\mathcal{C}(K)$. 
+		Prove that $S$ is compact (with respect to the metric defined in Section 7.14) if and only if $S$ is uniformly closed, pointwise bounded, and equicontinuous. 
+		(If $S$ is not equicontinuous, then $S$ contains a sequence which has no equicontinuous subsequence, hence has no subsequence that converges uniformly on $K$.)
+		
+		
+		\section{Problem 20}
+		
+		If $f$ is continuous on $[0,1]$ and if
+		\[
+		\int_0^1 f(x)x^n\,dx = 0 \qquad (n=0,1,2,\dots),
+		\]
+		prove that $f(x)=0$ on $[0,1]$. 
+		\textit{Hint:} The integral of the product of $f$ with any polynomial is zero. 
+		Use the Weierstrass theorem to show that
+		\[
+		\int_0^1 f^2(x)\,dx = 0.
+		\]
+		
+		\section{Problem 21}
+		
+		Let $K$ be the unit circle in the complex plane (i.e., the set of all $z$ with $|z|=1$), and let $\mathcal{A}$ be the algebra of all functions of the form
+		\[
+		f(e^{i\theta}) = \sum_{n=0}^N c_n e^{in\theta} \qquad (\theta \text{ real}).
+		\]
+		Then $\mathcal{A}$ separates points on $K$ and $\mathcal{A}$ vanishes at no point of $K$, but nevertheless there are continuous functions on $K$ which are not in the uniform closure of $\mathcal{A}$.  
+		
+		\textit{Hint:} For every $f\in\mathcal{A}$,
+		\[
+		\int_0^{2\pi} f(e^{i\theta})e^{i\theta}\,d\theta = 0,
+		\]
+		and this is also true for every $f$ in the closure of $\mathcal{A}$.
+		
+			\section{Problem 22}
+			
+			Assume $f\in\mathcal{R}(\alpha)$ on $[a,b]$, and prove that there are polynomials $P_n$ such that
+		\[
+		\lim_{n\to\infty}\int_a^b|f-P_n|^2\,d\alpha = 0.
+		\]
+		(Compare with Exercise 12, Chap. 6.)
+		
+			\section{Problem 23}
+			
+		Put $P_0 = 0$, and define, for $n = 0, 1, 2, \dots,$
+		\[
+		P_{n+1}(x) = P_n(x) + \frac{x^2 - P_n^2(x)}{2}.
+		\]
+		Prove that
+		\[
+		\lim_{n\to\infty} P_n(x) = |x|,
+		\]
+		uniformly on $[-1,1]$.
+		(This makes it possible to prove the Stone–Weierstrass theorem without first
+		proving Theorem 7.26.)
+		
+		\textit{Hint:} Use the identity
+		\[
+		|x| - P_{n+1}(x)
+		= \bigl(|x| - P_n(x)\bigr)\left[1 - \frac{|x| + P_n(x)}{2}\right]
+		\]
+		to prove that $0 \le P_n(x) \le P_{n+1}(x) \le |x|$ if $|x| \le 1$, and that
+		\[
+		|x| - P_n(x) \le |x|\left(1 - \frac{|x|}{2}\right)^n < \frac{2}{n+1}
+		\quad\text{if } |x| \le 1.
+		\]
+		
+		
+			\section{Problem 24}
+			
+		Let $X$ be a metric space, with metric $d$. Fix a point $a\in X$. Assign to each
+		$p\in X$ the function $f_p$ defined by
+		\[
+		f_p(x)=d(x,p)-d(x,a) \qquad (x\in X).
+		\]
+		Prove that $|f_p(x)|\le d(a,p)$ for all $x\in X$, and that therefore
+		$f_p\in \mathcal{C}(X)$. Prove that
+		\[
+		\|f_p-f_q\| = d(p,q)
+		\]
+		for all $p,q\in X$.  
+		
+		If $\Phi(p)=f_p$ it follows that $\Phi$ is an isometry (a distance-preserving
+		mapping) of $X$ onto $\Phi(X)\subset \mathcal{C}(X)$.  
+		
+		Let $Y$ be the closure of $\Phi(X)$ in $\mathcal{C}(X)$. Show that $Y$ is complete.
+		
+		\textit{Conclusion:} $X$ is isometric to a dense subset of a complete metric space
+		$Y$. (Exercise 24, Chap. 3 contains a different proof of this.)
+		
+		\section{Problem 25}
+		
+		Suppose $\phi$ is a continuous bounded real function in the strip defined by
+		\[
+		0\le x\le 1,\quad -\infty<y<\infty.
+		\]
+		Prove that the initial-value problem
+		\[
+		y'=\phi(x,y),\qquad y(0)=c
+		\]
+		has a solution. (Note that the hypotheses of this existence theorem are less
+		stringent than those of the corresponding uniqueness theorem; see Exercise 27,
+		Chap. 5.)
+		
+		\textit{Hint:} Fix $n$. For $i=0,\dots,n$, put $x_i=i/n$. Let $f_n$ be a continuous
+		function on $[0,1]$ such that $f_n(0)=c$,
+		\[
+		f_n'(t)=\phi(x_i,f_n(x_i)) \qquad \text{if } x_i<t<x_{i+1},
+		\]
+		and put
+		\[
+		\Delta_n(t)=f_n'(t)-\phi(t,f_n(t)),
+		\]
+		except at the points $x_i$, where $\Delta_n(t)=0$. Then
+		\[
+		f_n(x)=c+\int_0^x\bigl[\phi(t,f_n(t))+\Delta_n(t)\bigr]\,dt.
+		\]
+		Choose $M<\infty$ so that $|\phi|\le M$. Verify the following assertions.
+		(a) $|f_n'| \le M$, $|\Delta_n| \le 2M$, $\Delta_n \in \mathcal{R}$, and 
+		$|f_n| \le |c| + M = M_1$, say, on $[0,1]$, for all $n$.
+		
+		(b) $\{f_n\}$ is equicontinuous on $[0,1]$, since $|f_n'| \le M$.
+		
+		(c) Some $\{f_{n_k}\}$ converges to some $f$, uniformly on $[0,1]$.
+		
+		(d) Since $\phi$ is uniformly continuous on the rectangle 
+		$0 \le x \le 1$, $|y| \le M_1$, 
+		$\phi(t,f_{n_k}(t)) \to \phi(t,f(t))$ uniformly on $[0,1]$.
+		
+		(e) $\Delta_n(t) \to 0$ uniformly on $[0,1]$, since 
+		$\Delta_n(t) = \phi(x_i,f_n(x_i)) - \phi(t,f_n(t))$ in $(x_i,x_{i+1})$.
+		
+		
+		(f) Hence
+		
+		$f(x) = c + \int_0^x \phi(t, f(t)) \, dt.$
+		
+		This $f$ is a solution of the given problem.
+		
+		
+		\section{Problem 26}
 
-$$
-\gamma_{1}(t)=e^{i t}, \quad \gamma_{2}(t)=e^{2 i t}, \quad \gamma_{3}(t)=e^{2 \pi i t \sin (1 / t)} .
-$$
-
-Show that these three curves have the same range, that $\gamma_{1}$ and $\gamma_{2}$ are rectifiable, that the length of $\gamma_{1}$ is $2 \pi$, that the length of $\gamma_{2}$ is $4 \pi$, and that $\gamma_{3}$ is not rectifiable.
+		 Prove an analogous existence theorem for the initial-value problem
 		
-		\textbf{Answer}
+		$y' = \Phi(x,y), \qquad y(0) = c,$
 		
-		\clearpage
+		where now $c \in \mathbb{R}^k$, $y \in \mathbb{R}^k$, and $\Phi$ is a continuous bounded mapping of the part of $\mathbb{R}^{k+1}$ defined by $0 \le x \le 1$, $y \in \mathbb{R}^k$ into $\mathbb{R}^k$. (Compare Exercise 28, Chap. 5.) 
 		
-		\section{Problem 19}
-		
-		Let $\gamma_{1}$ be a curve in $R^{k}$, defined on $[a, b]$; let $\phi$ be a continuous 1-1 mapping of $[c, d]$ onto $[a, b]$, such that $\phi(c)=a$; and define $\gamma_{2}(s)=\gamma_{1}(\phi(s))$. Prove that $\gamma_{2}$ is an arc, a closed curve, or a rectifiable curve if and only if the same is true of $\gamma_{1}$. Prove that $\gamma_{2}$ and $\gamma_{1}$ have the same length.
+		Hint: Use the vector-valued version of Theorem 7.25.
 		
 		
-		\textbf{Answer}
+		\end{document}
 		
-		\clearpage
 		
-	\end{document}
+	
