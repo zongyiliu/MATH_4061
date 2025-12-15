@@ -1,0 +1,621 @@
+\documentclass[letterpaper]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{LightRubineRed}{RubineRed!70}
+\colorlet{Mycolor1}{green!10!orange}
+\definecolor{Mycolor2}{HTML}{00F9DE}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref} 
+\usepackage{xcolor} % For custom colors
+\lstset{
+	language=Python,                % Choose the language (e.g., Python, C, R)
+	basicstyle=\ttfamily\small, % Font size and type
+	keywordstyle=\color{blue},  % Keywords color
+	commentstyle=\color{gray},  % Comments color
+	stringstyle=\color{red},    % String color
+	numbers=left,               % Line numbers
+	numberstyle=\tiny\color{gray}, % Line number style
+	stepnumber=1,               % Numbering step
+	breaklines=true,            % Auto line break
+	backgroundcolor=\color{black!5}, % Light gray background
+	frame=single,               % Frame around the code
+}
+\usepackage{float}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+	\usepackage[]{amssymb} %gives us the character \varnothing
+	
+	\title{Homework 10, MATH 4061}
+	\author{Zongyi Liu}
+	\date{Fri, Nov 28, 2025}
+	\begin{document}
+		\maketitle
+		
+		\section{Question 1}
+		\textbf{ Uniform convergence}
+		
+		Let $f_{n}, g_{n}:(0,1) \rightarrow \mathbb{R}$ be two sequences of continuous functions such that both $\left(f_{n}\right)_{n \in \mathbb{N}}$ and $\left(g_{n}\right)_{n \in \mathbb{N}}$ converge uniformly for $n \rightarrow \infty$.
+		
+		
+		a) In case $\left(f_{n}\right)_{n \in \mathbb{N}}$ and $\left(g_{n}\right)_{n \in \mathbb{N}}$ are sequences of bounded functions, show that also $\left(f_{n} g_{n}\right)_{n \in \mathbb{N}}$ converges uniformly for $n \rightarrow \infty$.
+		
+		
+		b) Show that it is necessary to assume boundedness by giving an example where $\left(f_{n} g_{n}\right)_{n \in \mathbb{N}}$ does not converge uniformly.
+		
+		
+		\textbf{Answer}
+		
+		\underline{Part a.} \emph{Uniform convergence}
+		
+		
+			Let $f_n\to f$ and $g_n\to g$ uniformly on $(0,1)$, and assume each $f_n,g_n$ is bounded on $(0,1)$.
+			Since $f_n\to f$ uniformly, $f$ is bounded. Fix $M_f:=\|f\|_\infty<\infty$.
+			Also, uniform convergence implies the sequence $(g_n)$ is \emph{uniformly bounded}:
+			choose $N_0$ such that $\|g_n-g\|_\infty\le 1$ for all $n\ge N_0$. Then for $n\ge N_0$,
+			\[
+			\|g_n\|_\infty \le \|g\|_\infty + \|g_n-g\|_\infty \le \|g\|_\infty+1=:M_g<\infty.
+			\]
+			Now for $n\ge N_0$,
+			\[
+			\|f_ng_n-fg\|_\infty
+			=\|(f_n-f)g_n + f(g_n-g)\|_\infty
+			\le \|f_n-f\|_\infty\,\|g_n\|_\infty + \|f\|_\infty\,\|g_n-g\|_\infty
+			\le M_g\|f_n-f\|_\infty + M_f\|g_n-g\|_\infty.
+			\]
+			Given $\varepsilon>0$, choose $N_1$ so that $\|f_n-f\|_\infty\le \varepsilon/(2M_g)$ for $n\ge N_1$,
+			and choose $N_2$ so that $\|g_n-g\|_\infty\le \varepsilon/(2M_f)$ for $n\ge N_2$.
+			Then for $n\ge N:=\max\{N_0,N_1,N_2\}$,
+			\[
+			\|f_ng_n-fg\|_\infty \le M_g\cdot \frac{\varepsilon}{2M_g} + M_f\cdot \frac{\varepsilon}{2M_f}=\varepsilon.
+			\]
+			Hence $f_ng_n\to fg$ uniformly on $(0,1)$.
+			
+			
+			
+			\underline{Part b.} \emph{Necessity of boundedness}
+			
+			
+			Firstly, define $
+			f_n(x)=n,\quad g_n(x)=\frac{1}{n}+\sin(nx),\quad x\in(0,1).$ Then each $f_n,g_n$ is continuous on $(0,1)$.
+			Clearly $f_n\to f\equiv +\infty$ is {not} a uniform limit in $\mathbb R$, so instead take
+			\[
+			f_n(x)=\sin(nx),\qquad g_n(x)=n,\qquad x\in(0,1).
+			\]
+			This still fails since $g_n$ does not converge uniformly.
+			
+			A correct example where {each} sequence converges uniformly but the product does not:
+			\[
+			f_n(x)=x,\qquad g_n(x)=\frac{1}{x}+\frac{1}{n},\qquad x\in(0,1).
+			\]
+			But it does not hold for $f_n\equiv f$ converges uniformly to $f(x)=x$, and $g_n$ converges uniformly to $g$ uniformly, since $\frac1x$ is unbounded
+			and $\|g_n-g\|_\infty=\sup_{x\in(0,1)}\frac1n=\frac1n$ would suggest uniform, but $g$ is not bounded and uniform convergence
+			does not require bounded limit on non-compact sets; however $\sup_{x\in(0,1)}|g_n-g|=\frac1n$ is finite, so indeed $g_n\to g(x)=1/x$
+			uniformly on $(0,1)$.
+			Yet the product is $
+			f_n(x)g_n(x)=x\Bigl(\frac{1}{x}+\frac{1}{n}\Bigr)=1+\frac{x}{n}.$ This {does} converge uniformly to $1$, so it is not a counterexample.
+			
+			Instead, take limits $f\equiv 0$ and $g\equiv 0$ but make the product spike near $0$:
+			\[
+			f_n(x)=\frac{1}{n}\cdot \frac{1}{x},\qquad g_n(x)=\frac{1}{n}\cdot \frac{1}{x},\qquad x\in(0,1).
+			\]
+			Then $\|f_n\|_\infty=\|g_n\|_\infty=+\infty$, and
+			\[
+			\sup_{x\in(0,1)}|f_n(x)-0|=+\infty,
+			\]
+			so $f_n$ does not converge to 0 uniformly; such a counterexample cannot exist under the stated hypotheses because
+			uniform convergence of real-valued functions on any set implies the sequence is uniformly bounded.
+			Therefore the boundedness assumption is {automatic}, and (a) holds without adding boundedness.
+
+		
+		
+		
+		\clearpage
+		
+		
+		\section{Question 2}
+		\textbf{Chain rule}
+		
+		Let $f:(a, b) \rightarrow \mathbb{R}$ and $g:(c, d) \rightarrow \mathbb{R}$ be functions such that $f((a, b)) \subset(c, d)$. Suppose that $f$ is differentiable at $x_{0} \in(a, b)$ and that $g$ is differentiable at $f\left(x_{0}\right)$. Prove that
+		
+		$$
+		(g \circ f)^{\prime}\left(x_{0}\right)=g^{\prime}\left(f\left(x_{0}\right)\right) f^{\prime}\left(x_{0}\right) .
+		$$
+		
+		\textbf{Answer}
+		
+	
+Set $y_0:=f(x_0)$. For $x\neq x_0$ define $Q(x):=\frac{g(f(x))-g(f(x_0))}{x-x_0}.$ If $f(x)\neq f(x_0)$, write
+\[
+Q(x)
+=\frac{g(f(x))-g(y_0)}{f(x)-y_0}\cdot \frac{f(x)-y_0}{x-x_0}.
+\]
+If $f(x)=f(x_0)$, define the first factor to be $g'(y_0)$ (this does not affect the limit).
+Thus define
+\[
+A(x):=
+\begin{cases}
+\dfrac{g(f(x))-g(y_0)}{f(x)-y_0}, & f(x)\neq y_0,\\[8pt]
+g'(y_0), & f(x)=y_0,
+\end{cases}
+\qquad
+B(x):=\dfrac{f(x)-y_0}{x-x_0}\quad(x\neq x_0),
+\]
+so that $Q(x)=A(x)\,B(x)$ for all $x\neq x_0$.
+
+Since $f$ is differentiable at $x_0$, it is continuous at $x_0$, hence $f(x)\to y_0$ as $x\to x_0$.
+Because $g$ is differentiable at $y_0$, we have
+\[
+\lim_{u\to y_0}\frac{g(u)-g(y_0)}{u-y_0}=g'(y_0),
+\]
+which implies $\lim_{x\to x_0} A(x)=g'(y_0)$ (by taking $u=f(x)$, noting $u\to y_0$).
+Also, by differentiability of $f$ at $x_0$, we have that $
+\lim_{x\to x_0} B(x)=f'(x_0).$ Therefore, using the limit law for products,
+\[
+\lim_{x\to x_0} Q(x)
+=\left(\lim_{x\to x_0}A(x)\right)\left(\lim_{x\to x_0}B(x)\right)
+=g'(y_0)\,f'(x_0)
+=g'\bigl(f(x_0)\bigr)\,f'(x_0).
+\]
+But $\lim_{x\to x_0}Q(x)$ is exactly the definition of $(g\circ f)'(x_0)$, hence $
+(g\circ f)'(x_0)=g'\bigl(f(x_0)\bigr)\,f'(x_0).$
+\qed
+
+		
+		\clearpage
+		
+		
+		\section{Question 3}
+		\textbf{Integration by parts}
+		
+		Let $f, g:[a, b] \rightarrow \mathbb{R}$ be differentiable functions whose derivatives are Riemann integrable. Show that
+		
+		$$
+		\int_{a}^{b} f(x) g^{\prime}(x) d x=f(b) g(b)-f(a) g(a)-\int_{a}^{b} f^{\prime}(x) g(x) d x
+		$$
+		
+		\textbf{Answer}
+
+		
+		Since $f,g$ are differentiable on $[a,b]$, they are continuous on $[a,b]$ and hence bounded.
+		Assume $f',g'$ are Riemann integrable on $[a,b]$. Fix a partition $P:\ a=x_0<\cdots<x_n=b$ and choose tags $\xi_i\in[x_{i-1},x_i]$.
+		By the Mean Value Theorem, for each $i$ there exist points $\alpha_i,\beta_i\in(x_{i-1},x_i)$ such that
+		\[
+		f(x_i)-f(x_{i-1})=f'(\alpha_i)\Delta x_i,\qquad
+		g(x_i)-g(x_{i-1})=g'(\beta_i)\Delta x_i,
+		\quad \Delta x_i:=x_i-x_{i-1}.
+		\]
+		Use the discrete product identity, we have that $
+		f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})
+		= f(x_i)\bigl(g(x_i)-g(x_{i-1})\bigr)+g(x_{i-1})\bigl(f(x_i)-f(x_{i-1})\bigr).$ Summing over $i=1,\dots,n$ would yields:
+		\begin{align*}
+			f(b)g(b)-f(a)g(a)
+			&=\sum_{i=1}^n f(x_i)\bigl(g(x_i)-g(x_{i-1})\bigr)
+			+\sum_{i=1}^n g(x_{i-1})\bigl(f(x_i)-f(x_{i-1})\bigr)\\
+			&=\sum_{i=1}^n f(x_i)\,g'(\beta_i)\Delta x_i
+			+\sum_{i=1}^n f'(\alpha_i)\,g(x_{i-1})\Delta x_i.
+		\end{align*}
+		
+		Now compare these sums with the Riemann sums for the integrals.
+		Write
+		\[
+		\sum_{i=1}^n f(x_i)\,g'(\beta_i)\Delta x_i
+		=\sum_{i=1}^n f(\beta_i)\,g'(\beta_i)\Delta x_i
+		+\sum_{i=1}^n \bigl(f(x_i)-f(\beta_i)\bigr)g'(\beta_i)\Delta x_i.
+		\]
+		Since $f$ is uniformly continuous on $[a,b]$, for any $\varepsilon>0$ there is $\delta>0$ such that
+		$|x-y|<\delta\Rightarrow |f(x)-f(y)|<\varepsilon$.
+		If the mesh $\|P\|:=\max_i\Delta x_i<\delta$, then $|x_i-\beta_i|\le\Delta x_i<\delta$, hence
+		$|f(x_i)-f(\beta_i)|<\varepsilon$ for all $i$, and therefore
+		\[
+		\left|\sum_{i=1}^n \bigl(f(x_i)-f(\beta_i)\bigr)g'(\beta_i)\Delta x_i\right|
+		\le \varepsilon\sum_{i=1}^n |g'(\beta_i)|\Delta x_i.
+		\]
+		Because $g'$ is Riemann integrable, the quantities
+		$\sum_{i=1}^n |g'(\beta_i)|\Delta x_i$ remain bounded as $\|P\|\to 0$ (e.g. by bounding with upper sums),
+		so the error term tends to $0$ as $\|P\|\to 0$.
+		
+		Thus, as $\|P\|\to 0$, we have that $
+		\sum_{i=1}^n f(x_i)\,g'(\beta_i)\Delta x_i \longrightarrow \int_a^b f(x)g'(x)\,dx.$
+		
+		An analogous argument (using uniform continuity of $g$) shows that
+		\[
+		\sum_{i=1}^n f'(\alpha_i)\,g(x_{i-1})\Delta x_i \longrightarrow \int_a^b f'(x)g(x)\,dx.
+		\]
+		Taking limits in
+		\[
+		f(b)g(b)-f(a)g(a)
+		=\sum_{i=1}^n f(x_i)\,g'(\beta_i)\Delta x_i
+		+\sum_{i=1}^n f'(\alpha_i)\,g(x_{i-1})\Delta x_i
+		\]
+		this gives
+		\[
+		f(b)g(b)-f(a)g(a)=\int_a^b f(x)g'(x)\,dx+\int_a^b f'(x)g(x)\,dx,
+		\]
+		which rearranges to the desired integration-by-parts formula:
+		\[
+		\int_{a}^{b} f(x) g^{\prime}(x)\, d x
+		=f(b) g(b)-f(a) g(a)-\int_{a}^{b} f^{\prime}(x) g(x)\, d x.
+		\]
+		
+		
+		\clearpage
+		
+		
+		\section{Question 4}
+		\textbf{Integration by Substitution}
+		
+		
+		Let $\varphi:[\alpha, \beta] \rightarrow[a, b]$ be a continuously differentiable, strictly monotone function, and let $f: [a, b] \rightarrow \mathbb{R}$ be continuous. Prove the substitution rule
+		
+		$$
+		\int_{\varphi(\alpha)}^{\varphi(\beta)} f(u) d u=\int_{\alpha}^{\beta} f(\varphi(t)) \varphi^{\prime}(t) d t
+		$$
+		
+		\textbf{Answer}
+		
+		We have the claim that 
+		$	\int_{\varphi(\alpha)}^{\varphi(\beta)} f(u)\,du
+		=\int_{\alpha}^{\beta} f(\varphi(t))\,\varphi'(t)\,dt,$ where $\varphi:[\alpha,\beta]\to[a,b]$ is $C^1$ and strictly monotone, and $f:[a,b]\to\mathbb R$ is continuous. And we can prove as below:
+
+Since $f$ is continuous on $[a,b]$, it is Riemann integrable. Define $
+F(x):=\int_{a}^{x} f(u)\,du,\qquad x\in[a,b].$ By the Fundamental Theorem of Calculus (for Riemann integrals), $F$ is differentiable on $(a,b)$ and $
+F'(x)=f(x)\quad \text{for all }x\in(a,b),$ and $F$ is continuous on $[a,b]$.
+
+Because $\varphi$ is $C^1$ on $[\alpha,\beta]$, the composition $F\circ\varphi$ is differentiable on $[\alpha,\beta]$ and
+by the chain rule,
+\[
+(F\circ \varphi)'(t)=F'(\varphi(t))\,\varphi'(t)=f(\varphi(t))\,\varphi'(t),\qquad t\in(\alpha,\beta).
+\]
+Since $f\circ\varphi$ and $\varphi'$ are continuous, the product $f(\varphi(t))\varphi'(t)$ is continuous on $[\alpha,\beta]$
+and hence Riemann integrable.
+
+Applying the Fundamental Theorem of Calculus to the derivative of $F\circ\varphi$ gives
+\[
+\int_{\alpha}^{\beta} f(\varphi(t))\,\varphi'(t)\,dt
+=\int_{\alpha}^{\beta} (F\circ\varphi)'(t)\,dt
+=(F\circ\varphi)(\beta)-(F\circ\varphi)(\alpha)
+=F(\varphi(\beta))-F(\varphi(\alpha)).
+\]
+By the definition of $F$, $
+F(\varphi(\beta))-F(\varphi(\alpha))
+=\int_{a}^{\varphi(\beta)} f(u)\,du-\int_{a}^{\varphi(\alpha)} f(u)\,du
+=\int_{\varphi(\alpha)}^{\varphi(\beta)} f(u)\,du,$ where the last equality is the additivity of the Riemann integral over intervals.
+Therefore we have
+\[
+\int_{\varphi(\alpha)}^{\varphi(\beta)} f(u)\,du
+=\int_{\alpha}^{\beta} f(\varphi(t))\,\varphi'(t)\,dt.
+\]
+\qed
+
+		
+		
+		
+		\clearpage
+		
+		\section{Question 5}
+		
+		\textbf{Completeness of bounded continuous functions}
+		
+		Let $C_{b}([0,1])$ be the space of bounded continuous functions on the interval $[0,1]$. Define the norm
+		
+		$$
+		\|f\|_{L^{1}}:=\int_{0}^{1}|f(x)| d x
+		$$
+		
+		and the corresponding metric $d_{L^{1}}(f, g)=\|f-g\|_{L^{1}}$. Is the metric space $\left(C_{b}([0,1]), d_{L^{1}}\right)$ complete?
+		
+		\textbf{Answer}
+		
+		No, $(C_b([0,1]),d_{L^1})$ { is not complete}, and we can prove as below:
+		
+
+		\underline{Part 1.} \emph{$L^1$-Cauchy implies $L^1$ convergence to some $L^1$ function.}
+		Let $(f_n)\subset C_b([0,1])$ be Cauchy in $d_{L^1}$, i.e. Cauchy in the norm:
+		\[
+		\|f\|_{L^1}=\int_0^1 |f(x)|\,dx.
+		\]
+		Then $(f_n)$ is a Cauchy sequence in the normed space $(L^1([0,1]),\|\cdot\|_{1})$ (identifying $f_n$ with its $L^1$-class).
+		Since $L^1([0,1])$ is complete, there exists $f\in L^1([0,1])$ such that $
+		\|f_n-f\|_{1}\to 0.$ To show non-completeness of $C_b([0,1])$ under $\|\cdot\|_{1}$, it suffices to produce an $L^1$-Cauchy sequence of continuous
+		functions whose $L^1$-limit is not (equal a.e. to) any continuous function.
+		
+		\medskip
+		\underline{Part 2.} \emph{A Cauchy sequence of continuous functions converging in $L^1$ to a discontinuous limit.}
+		Let $f=\mathbf{1}_{[1/2,\,1]}$ on $[0,1]$. Define for $n\in\mathbb N$ a continuous function $f_n:[0,1]\to\mathbb R$ by
+		\[
+		f_n(x)=
+		\begin{cases}
+			0, & 0\le x\le \frac12-\frac1n,\\[4pt]
+			\displaystyle \frac{n}{2}\Bigl(x-\frac12+\frac1n\Bigr), 
+			& \frac12-\frac1n< x< \frac12+\frac1n,\\[8pt]
+			1, & \frac12+\frac1n\le x\le 1.
+		\end{cases}
+		\]
+		Then each $f_n$ is continuous and bounded with $0\le f_n\le 1$.
+		
+		Moreover, $f_n(x)=f(x)$ for all $x\notin\left(\frac12-\frac1n,\frac12+\frac1n\right)$, hence $
+		\|f_n-f\|_{1}
+		=\int_0^1 |f_n(x)-f(x)|\,dx
+		\le \int_{1/2-1/n}^{1/2+1/n} 1\,dx
+		=\frac{2}{n}\xrightarrow[n\to\infty]{}0.$ Therefore $f_n\to f$ in $L^1$, and in particular $(f_n)$ is $L^1$-Cauchy.
+		
+		\medskip
+		\underline{Part 3.} \emph{The $L^1$-limit cannot lie in $C_b([0,1])$.}
+		Suppose, for contradiction, that there exists $g\in C_b([0,1])$ with $\|f_n-g\|_{1}\to 0$.
+		Then by the triangle inequality,
+		\[
+		\|g-f\|_{1}\le \|g-f_n\|_{1}+\|f_n-f\|_{1}\xrightarrow[n\to\infty]{}0,
+		\]
+		so $g=f$ almost everywhere.
+		
+		But if a continuous function $g$ equals $f=\mathbf 1_{[1/2,1]}$ almost everywhere, then:
+		- for every $\delta>0$, on the interval $[0,1/2-\delta]$ we have $f=0$ everywhere, hence $g=0$ a.e. there;
+		by continuity, $g\equiv 0$ on $[0,1/2-\delta]$;
+		- similarly, $g\equiv 1$ on $[1/2+\delta,1]$.
+		
+		Letting $\delta\downarrow 0$ forces $g(x)=0$ for $x<1/2$ and $g(x)=1$ for $x>1/2$, contradicting continuity at $x=1/2$.
+		Thus no such $g$ exists, i.e. the $L^1$-limit of $(f_n)$ is not in $C_b([0,1])$.
+		
+		Hence there exists an $L^1$-Cauchy sequence in $C_b([0,1])$ that does not converge in $C_b([0,1])$,
+		so $\bigl(C_b([0,1]),d_{L^1}\bigr)$ is \emph{not complete}.
+		\qed
+		
+
+		\clearpage
+		
+		\section{Question 6}
+		
+		\textbf{Convergence and differentiation}
+		
+		Let $f_{n}:[a, b] \rightarrow \mathbb{R}$ be a sequence of differentiable functions. Show that if $f_{n}$ converges uniformly to $f$, and if the derivatives $f_{n}^{\prime}$ converge uniformly to $g$, then $f$ is differentiable and $f^{\prime}=g$. By giving an example, show that the above assumptions are necessary. What does this imply for series?
+		
+		
+		\textbf{Answer}
+		
+		\underline{Part 1.} \emph{Differentiability at the limit}
+		
+		Fix $x\in[a,b]$ and $h\neq 0$ such that $x+h\in[a,b]$.
+		For each $n$, by the mean value theorem there exists $\xi_{n,h}$ between $x$ and $x+h$ with $
+		\frac{f_n(x+h)-f_n(x)}{h}=f_n'(\xi_{n,h}).$ We can write
+		\[
+		\frac{f(x+h)-f(x)}{h}-g(x)
+		=
+		\underbrace{\frac{f(x+h)-f_n(x+h)}{h}}_{(I)}
+		-\underbrace{\frac{f(x)-f_n(x)}{h}}_{(II)}
+		+\underbrace{\bigl(f_n'(\xi_{n,h})-g(\xi_{n,h})\bigr)}_{(III)}
+		+\underbrace{\bigl(g(\xi_{n,h})-g(x)\bigr)}_{(IV)}.
+		\]
+		Let $\varepsilon>0$. Since $f_n\to f$ uniformly, choose $N_1$ such that $
+		\|f-f_n\|_\infty\le \frac{\varepsilon}{6}(b-a)\qquad(n\ge N_1).$ Then for any $h$ with $0<|h|\le b-a$ and $n\ge N_1$,
+		\[
+		|(I)|+|(II)|\le \frac{2\|f-f_n\|_\infty}{|h|}\le \frac{2}{|h|}\cdot \frac{\varepsilon}{6}(b-a).
+		\]
+		This bound is not yet uniform in $h$, so we proceed differently: use the integral form.
+		For each $n$ and any $x,y\in[a,b]$, we have that $
+		f_n(y)-f_n(x)=\int_x^y f_n'(t)\,dt$ Thus, for $y=x+h$, $
+		f_n(x+h)-f_n(x)=\int_x^{x+h} f_n'(t)\,dt.$ Pass to the limit in $n$:
+		uniform convergence $f_n\to f$ gives
+		\[
+		f(x+h)-f(x)=\lim_{n\to\infty}\bigl(f_n(x+h)-f_n(x)\bigr)
+		=\lim_{n\to\infty}\int_x^{x+h} f_n'(t)\,dt.
+		\]
+		Uniform convergence $f_n'\to g$ allows interchange of limit and integral:
+		\[
+		\lim_{n\to\infty}\int_x^{x+h} f_n'(t)\,dt=\int_x^{x+h} g(t)\,dt,
+		\]
+		hence we have $
+		f(x+h)-f(x)=\int_x^{x+h} g(t)\,dt.$ Divide by $h$:
+		\[
+		\frac{f(x+h)-f(x)}{h}=\frac1h\int_x^{x+h} g(t)\,dt.
+		\]
+		Since $g$ is a uniform limit of continuous functions $f_n'$, it is continuous on $[a,b]$.
+		Therefore, $
+		\lim_{h\to 0}\frac1h\int_x^{x+h} g(t)\,dt=g(x)$. This is achieved by the continuity of $g$. Thus $\displaystyle \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}=g(x)$, so $f$ is differentiable and $f'(x)=g(x)$.
+		Since $x$ was arbitrary, $f'=g$ on $[a,b]$.
+		\qed
+		
+		\medskip
+		\underline{Part 2.} \emph{Necessity of assumptions (counterexamples)}
+		
+			\underline{(i) Uniform convergence of $f_n$ is necessary.}
+			
+			Let $f_n(x)=nx$ on $[0,1]$. Then $f_n'$ converges uniformly to $g\equiv 1$,
+			but $f_n$ does not converge uniformly (nor pointwise) on $[0,1]$. Hence the conclusion cannot be expected.
+			
+			\underline{(ii) Uniform convergence of $f_n'$ is necessary}
+			
+			We can let
+			\[
+			f_n(x)=\sqrt{x^2+\frac1n}\qquad (x\in[-1,1]).
+			\]
+			Then $f_n$ is differentiable and $f_n\to f(x)=|x|$ uniformly on $[-1,1]$.
+			But $
+			f_n'(x)=\frac{x}{\sqrt{x^2+\frac1n}}$ does {not} converge uniformly on $[-1,1]$ (indeed $\sup_{x\in[-1,1]}|f_n'(x)-\operatorname{sgn}(x)|=1$ for all $n$).
+			The limit function $f(x)=|x|$ is not differentiable at $0$, so the conclusion fails.
+			
+			\underline{(iii) Even if $f_n'\to g$ pointwise but not uniformly, the conclusion may fail.}
+			
+			We can use the same example, and it shows that pointwise convergence of derivatives is not enough.
+			
+			
+			
+			\underline{Part 3.} \emph{Implication of series}
+		
+		Apply the theorem to partial sums. Let $u_n$ be differentiable on $[a,b]$ and set $s_N(x):=\sum_{n=1}^N u_n(x),\quad s_N'(x)=\sum_{n=1}^N u_n'(x).$ If $\sum_{n=1}^\infty u_n$ converges uniformly on $[a,b]$ to $s$, and
+		$\sum_{n=1}^\infty u_n'$ converges uniformly on $[a,b]$ to a function $h$,
+		then $s$ is differentiable and $
+		s'(x)=h(x)=\sum_{n=1}^\infty u_n'(x)\qquad \text{for all }x\in[a,b].$ Equivalently, under these uniform convergence hypotheses, we can differentiate term-by-term:
+		\[
+		\frac{d}{dx}\left(\sum_{n=1}^\infty u_n(x)\right)=\sum_{n=1}^\infty u_n'(x).
+		\]
+		
+		
+		
+		\clearpage
+		
+		\section{Question 7}
+		
+		\textbf{Differentiation of Power Series}
+		
+		Let $\left(c_{n}\right)_{n \in \mathbb{N}}$ be a sequence of complex numbers, and consider the power series
+		
+		$$
+		f(x)=\sum_{n=0}^{\infty} c_{n} x^{n}
+		$$
+		
+		with radius of convergence $R>0$. Show that $f$ is differentiable on ($-R, R$) and that its derivative is given by
+		
+		$$
+		f^{\prime}(x)=\sum_{n=1}^{\infty} n c_{n} x^{n-1}
+		$$
+		
+		and that the differentiated series also has radius of convergence $R$.
+		
+		
+		\textbf{Answer}
+		
+		
+		
+		Fix $r$ with $0<r<R$.
+		
+		\underline{Part 1.} \emph{Uniform convergence on $[-r,r]$}
+
+		Since the radius of convergence is $R$, the series $\sum_{n=0}^\infty c_n x^n$ converges absolutely for every $|x|\le r$.
+		Moreover, by the Weierstrass $M$--test,
+		\[
+		\sup_{|x|\le r} |c_n x^n|\le |c_n|r^n,
+		\]
+		and $\sum_{n=0}^\infty |c_n|r^n<\infty$. Hence $\sum c_n x^n$ converges uniformly on $[-r,r]$.
+		
+		Define the partial sums $S_N(x):=\sum_{n=0}^N c_n x^n$, so $S_N\to f$ uniformly on $[-r,r]$.
+		
+		\underline{Part 2.} \emph{Uniform convergence of the derivative series on $[-r,r]$}
+		
+		We can consider the series $
+		\sum_{n=1}^\infty n c_n x^{n-1}.$ For $|x|\le r$,
+		\[
+		\bigl|n c_n x^{n-1}\bigr|\le n|c_n|r^{n-1}.
+		\]
+		We show $\sum_{n=1}^\infty n|c_n|r^{n-1}<\infty$.
+		Pick $s$ with $r<s<R$. Since $\sum |c_n|s^n<\infty$, we have $|c_n|s^n\to 0$, so there exists $N_0$ and $M>0$ such that
+		$|c_n|\le M s^{-n}$ for all $n\ge N_0$. Then for $n\ge N_0$,
+		\[
+		n|c_n|r^{n-1}\le \frac{M}{r}\, n\left(\frac{r}{s}\right)^n.
+		\]
+		Because $0<r/s<1$, the series $\sum_{n=1}^\infty n(r/s)^n$ converges, hence by comparison
+		$\sum_{n=1}^\infty n|c_n|r^{n-1}$ converges.
+		Therefore, by the $M$--test, $\sum_{n=1}^\infty n c_n x^{n-1}$ converges uniformly on $[-r,r]$.
+		
+		Let $T_N(x):=\sum_{n=1}^N n c_n x^{n-1}$; then $T_N\to g$ uniformly on $[-r,r]$ for some continuous function $g$.
+		
+		\underline{Part 3.} \emph{Differentiate term-by-term}
+		
+		Each $S_N$ is a polynomial, hence differentiable, and $S_N'(x)=T_N(x)$.
+		Since $S_N\to f$ uniformly on $[-r,r]$ and $S_N'\to g$ uniformly on $[-r,r]$,
+		the standard theorem on limits of derivatives yields that $f$ is differentiable on $(-r,r)$ and $
+		f'(x)=g(x)=\sum_{n=1}^\infty n c_n x^{n-1}\qquad(|x|<r).$ Because $r\in(0,R)$ was arbitrary, this holds for all $x\in(-R,R)$.
+		
+		\underline{Part 4.} \emph{Radius of convergence of the differentiated series}
+		
+		We let $ d_n := (n+1)c_{n+1}\qquad(n\ge 0)$, so that $\sum_{n=1}^\infty n c_n x^{n-1} = \sum_{n=0}^\infty d_n x^n$.
+		By the root test characterization of radius of convergence, $
+		\frac{1}{R}=\limsup_{n\to\infty} |c_n|^{1/n}.$ Also,
+		\[
+		\limsup_{n\to\infty} |d_n|^{1/n}
+		=\limsup_{n\to\infty} \bigl|(n+1)c_{n+1}\bigr|^{1/n}
+		\le \left(\lim_{n\to\infty}(n+1)^{1/n}\right)\!\cdot\!\left(\limsup_{n\to\infty}|c_{n+1}|^{1/n}\right)
+		=\limsup_{n\to\infty}|c_n|^{1/n},
+		\]
+		since $(n+1)^{1/n}\to 1$ and $\limsup_{n}|c_{n+1}|^{1/n}=\limsup_{n}|c_n|^{1/n}$.
+		Conversely,
+		\[
+		\limsup_{n\to\infty}|c_n|^{1/n}
+		=\limsup_{n\to\infty}\left|\frac{d_{n-1}}{n}\right|^{1/n}
+		\le \left(\lim_{n\to\infty}n^{-1/n}\right)\!\cdot\!\left(\limsup_{n\to\infty}|d_{n-1}|^{1/n}\right)
+		=\limsup_{n\to\infty}|d_n|^{1/n}.
+		\]
+		Hence $
+		\limsup_{n\to\infty}|d_n|^{1/n}=\limsup_{n\to\infty}|c_n|^{1/n},$ so the radii of convergence coincide:
+		\[
+		R_{\text{diff}}=\frac{1}{\limsup |d_n|^{1/n}}=\frac{1}{\limsup |c_n|^{1/n}}=R.
+		\]
+		\qed
+		
+		
+		
+		\clearpage
+		
+		\section{Question 8}
+		
+		
+		\textbf{Uniform boundedness}
+		
+		Let $(X, d)$ be a compact metric space, and let $f_{n}: X \rightarrow \mathbb{R}, n \in \mathbb{N}$, be a pointwise bounded and uniformly equicontinuous sequence of functions, i.e.
+		
+		$$
+		\forall x \in X: \exists M \in \mathbb{R}: \forall n \in \mathbb{N}:\left|f_{n}(x)\right| \leq M
+		$$
+		
+		and
+		
+		$$
+		\forall \varepsilon>0: \exists \delta>0: \forall x, y \in X: \forall n \in \mathbb{N}:\left(d_{X}(x, y) \leq \delta \Longrightarrow\left|f_{n}(x)-f_{n}(y)\right| \leq \varepsilon\right)
+		$$
+		
+		Show that $\left(f_{n}\right)_{n \in \mathbb{N}}$ is also uniformly bounded, i.e.
+		
+		$$
+		\exists C \in \mathbb{R}: \forall x \in X: \forall n \in \mathbb{N}:\left|f_{n}(x)\right| \leq C
+		$$
+		
+		\textbf{Answer}
+		
+		By uniform equicontinuity with $\varepsilon=1$, there exists $\delta>0$ such that $
+		d(x,y)\le \delta \implies |f_n(x)-f_n(y)|\le 1 \qquad \forall n\in\mathbb N.$ Compactness of $X$ implies total boundedness, hence there exist points
+		$x_1,\dots,x_m\in X$ such that $
+		X\subset \bigcup_{i=1}^m B(x_i,\delta).$ For each $i\in\{1,\dots,m\}$, pointwise boundedness at $x_i$ gives a constant $M_i$ with $
+		|f_n(x_i)|\le M_i\qquad \forall n\in\mathbb N.$ Let $C:=\max_{1\le i\le m}(M_i+1).$
+		
+		Then we fix any $x\in X$. Choose $i$ such that $x\in B(x_i,\delta)$, i.e. $d(x,x_i)<\delta$.
+		Then for every $n\in\mathbb N$, $
+		|f_n(x)|\le |f_n(x_i)|+|f_n(x)-f_n(x_i)|
+		\le M_i+1 \le C.$ Since $x$ and $n$ were arbitrary, this proves the uniform bound.
+		\qed
+		
+		
+		\clearpage
+		
+		
+	\end{document}
